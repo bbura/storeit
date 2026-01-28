@@ -1,0 +1,18 @@
+{
+  "ar": [
+    "commonAppName",
+    "editingProfilePhoneHasBeenUpdated",
+    "homeCard1Description",
+    "homeCard1Title",
+    "digitalEmailPageSubtitle",
+    "authenticationOvertookByOtherDevice",
+    "digitalRegistrationComplete",
+    "digitalReactivateTitleName",
+    "helpAndSupportCallUsDescription",
+    "templateDeletedErrorMessage",
+    "templateUpdateAlertMessage",
+    "vpTemplateTripTitle",
+    "digitalRegistrationEmailError",
+    "b2cPaymentErrorDescription"
+  ]
+}

@@ -1,0 +1,973 @@
+{
+  "@@locale": "ar",
+  "commonContinue": "متابعة",
+  "continueBooking": "أضف إلى السلة",
+  "commonCancel": "إلغاء",
+  "commonExit": "خروج",
+  "commonClose": "إغلاق",
+  "commonReturn": "عودة",
+  "commonDone": "تم",
+  "commonEdit": "تعديل",
+  "commonSearch": "بحث",
+  "commonSave": "حفظ",
+  "commonPickerItemsLabel": "جميع الخيارات",
+  "commonLoadingCTAFirstThreshold": "Hang on please...",
+  "goAquaArabiaByTaxiInfo1": "الوصول إلى أكواريبيا مدينة القدية بالسيارة أو التاكسي في غاية السهولة. ما عليكم سوى اتباع الخطوات التالية:\n\nالخطوة 1: اكتبوا \"أكواريبيا مدينة القدية\" في تطبيق الخرائط، واتبعوا اللوحات الإرشادية المؤدية إلى مدينة القدية.\n\nالخطوة 2: عند الوصول، سيرحب بكم موظفونا ويرشدونكم إلى منطقة المواقف المخصصة.\n\nالخطوة 3: بعد إيقاف السيارة، استقلوا حافلتنا الخاصة بالنقل الترددي لتوصلكم إلى المتنزه الترفيهي خلال دقائق قليلة فقط.",
+  "goAquaArabiaByTaxiInfo2":"نصيحة هامة: يُرجى تجهيز التذكرة لتقديمها عند الوصول .تتوفر مواقف السيارات وفق أسبقية الوصول.",
+  "commonLoadingCTASecondThreshold": "Still loading...",
+  "settingAppVersion": "إصدار التطبيق ",
+  "b2cOptionalTopLabel": "*رقم الهاتف",
+  "commonLoadingCTAThirdThreshold": "Almost there...",
+  "commonInfantsNote":"يرجى ملاحظة أن الأطفال بعمر ثلاثة أعوام فأقل لا يحتاجون إلى تذكرة.",
+  "commonSeniorCitizenNote":"تتوفر تذاكر كبار السن، وتذاكر المرافقين، وتذاكر ذوي الإعاقة للشراء في المتنزه.",
+  "commonGuestsWithDisabilitiesNote":"نرحب بضيوفنا من ذوي الإعاقة. يرجى إبراز بطاقة إثبات الإعاقة عند شباك التذاكر للحصول على تذكرتكم.",
+  "commonLearnMore": "لمعرفة المزيد",
+  "startTheAdventure": "ابدأوا المغامرة",
+  "getReadyForAFullDayOfFun": "استعدوا ليوم كامل من المتعة",
+  "@_AQA_MOBILE": {
+    "description": "Text for _AQA_MOBILE APP goes under this category"
+  },
+  "aquatapConnectedTitle": "رائع! جهاز Aquatap الخاص بك متصل!",
+  "aquatapConnectedSubtitle": "لإكمال تجربتك المجانية عبر الهاتف المحمول، يمكنك أيضًا إعداد رقم سري لعمليات الشراء الآمنة في المنتزه.",
+  "aquatapConnectedPrimaryButton": "قم بإعداد الرقم السري وطريقة الدفع.",
+  "aquatapCompletedTitle": "تم إعداد أكواتاب!",
+  "aquatapCompletedInfoPoint1": "يمكنك الوصول إلى الحديقة وأي إضافات وميزات أخرى باستخدام جهاز Aquatap الخاص بك!",
+  "aquatapCompletedInfoPoint2": "يمكنك إلغاء تنشيط جهاز Aquatap الخاص بك في أي وقت من قسم ملفي الشخصي.",
+  "aquatapCompletedPrimaryButton": "إعداد أكواتاب أخرى",
+  "aquatapCompletedSecondaryButton": "إنهاء",
+  "oops": "عذرًا!",
+  "searchError": "لم نعثر على نتائج. يرجى إعادة المحاولة",
+  "editingProfileHeightSuccessMessage": "تم حفظ الطول بنجاح.",
+  "settingsGenderChanged": "تم حفظ الجنس بنجاح",
+  "genderSaveError": "نعتذر، لم يتم حفظ الجنس. يرجى إعادة المحاولة.",
+  "editingProfileHeightErrorMessage": "نعتذر، لم يتم حفظ الطول. يرجى إعادة المحاولة.",
+  "height": "الطول",
+  "heightUnit": "سم",
+  "heightSelectorScreenTitle": "اختاروا طولكم",
+  "editingProfileEmailTitle": "تعديل البريد الإلكتروني",
+  "editingProfileDateOfBirthTitle": "تعديل تاريخ الميلاد",
+  "editingProfileFirstNameTitle": "تعديل الاسم الأول",
+  "editingProfileLastNameTitle": "تعديل اسم العائلة",
+  "editingProfileAccessibilityOptionTitle": "اختاروا من بين خيارات <brandCyan>تسهيلات الاستخدام</brandCyan>",
+  "digitalCloseEditingDescription": "اذا غادرتم الآن، لن يتم حفظ التغييرات في {fieldName}.",
+  "editingProfileSaveClose": "احفظ وأغلق",
+  "editingProfileDiscard": "تجاهل",
+  "editingProfileSaveClose": "حفظ وإغلاق",
+  "editingProfileDiscard": "تجاهل",
+  "editingProfileEmailHasBeenUpdated": "لقد تم تحديث عنوان بريدك الإلكتروني.",
+  "editingProfileFieldHasBeenUpdated": "تم تحديث {field}.",
+  "editingProfileFieldWasNotUpdated": "لم يتم تحديث {field} .يُرجى المحاولة مرة أخرى",
+  "editingProfileNationalityTitle": "اختاروا الجنسية",
+  "editingProfileNationalitySuccessMessage": "تم حفظ جنسيتكم بنجاح.",
+  "editingProfileNationalityErrorMessage": "نعتذر، لم يتم حفظ الجنسية. يرجى إعادة المحاولة.",
+  "visualImpairment": "ضعف البصر",
+  "displayVisualImpairment": "بصرية",
+  "hearingImpairment": "ضعف السمع",
+  "displayHearingImpairment": "السمع",
+  "mentalImpairment": "التحديات الذهنية",
+  "displayMentalImpairment": "الذهنية",
+  "wheelchairUser": "مستخدمي الكراسي المتحركة",
+  "displayWheelchairUser": "كرسي متحرك",
+  "duplicateTripError": "تعذر نسخ زيارتك. يرجى المحاولة مرة أخرى",
+  "countryCodeSelectionCTA": "اختاروا رمز الدولة",
+  "languageEnglish": "English",
+  "languageArab": "العربية",
+  "navBarHomeItem": "الرئيسية",
+  "navBarExploreItem": "استكشف",
+  "navBarVisitItem": "زيارتي",
+  "navBarTicketsItem": "التذاكر",
+  "profileMyProfile": "ملفي الشخصي",
+  "profileWhyNeedQrCode": "لماذا أحتاج إلى رمز QR؟",
+  "profileLogOut": "تسجيل الخروج",
+  "profileId": "رقم العضوية",
+  "profileMyTickets": "تذاكري",
+  "profileSignUpTitle": "استعدوا لمغامرتكم القادمة!",
+  "profileSignUpDescription": "أنشؤوا حسابًا للحصول على عروض حصرية وتوصيات مخصصة، أو سجلوا الدخول للاستفادة من مزايا حسابكم!",
+  "profileNoTicketsTitle": "لا يوجد لديك أي تذاكر",
+  "profileNoTicketsDescription": "سيتم عرض التذاكر هنا عند إتمام أول حجز",
+  "profileBuyNow": "احصلوا عليها الآن",
+  "settingsTitle": "الإعدادات",
+  "personalInformationsettingsTitle": "الإعدادات",
+  "settingsSearch": "بحث",
+  "settingsAccount": "حسابي",
+  "settingsQiddiyaApps": "My Qiddiya Apps",
+  "settingsPersonalInfo": "المعلومات الشخصية",
+  "settingsLanguage": "اللغة",
+  "settingsLanguageTitle": "اختر لغتك",
+  "settingsLanguageChanged": "تم تحديث خيارات اللغة المفضلة بنجاح.",
+  "settingsTermsConditions": "الشروط والأحكام",
+  "settingsPaymentMethods": "طرق الدفع",
+  "settingsBiometric": "المصادقة ياستخدام البصمة",
+  "settingsAppPermissions": "صلاحيات التطبيق",
+  "settingsHelpAndSupport": "الدعم والمساعدة",
+  "settingsAccesibility": "إمكانية الوصول",
+  "settingsDeleteAccount": "حذف الحساب",
+  "settingsAppPermissionAlertTitle": "التنبيهات",
+  "settingsAppPermissionAlertDescription": "إبقوا على اطلاع دائم مع التحديثات الفورية للمتنزه المائي وأحوال الطقس وإيصالات الشراء لتحسين تجربة زيارتكم!",
+  "settingsAppPermissionPushNotification": "الإشعارات",
+  "settingsAppPermissionInAppNotification": "إشعارات داخل التطبيق",
+  "settingsAppPermissionEmail": "البريد الإلكتروني",
+  "settingsTermsAndConditions": "الشروط والأحكام",
+  "settingsAppPermissionSMS": "الرسائل النصية",
+  "settingsAppPermissionTitle": "التصريحات",
+  "settingsAppPermissionDescription": "السماح بتلقي تحديثات الأنشطة وإيصالات الدفع والإشعارات العاجلة ومعلومات الطقس.",
+  "settingsAppPermissionGeolocation": "الموقع الجغرافي",
+  "settingsAppPermissionPromotionsTitle": "العروض الترويجية",
+  "settingsAppPermissionPromotionsDescription": "كونوا أول من يعرف عن التجارب الجديدة والعروض والخصومات!",
+  "@settingsAppPermissionInfo1": "{email, select, none {سيتم إرسال جميع إشعارات الرسائل النصية القصيرة إلى {phoneNumber}. لتغيير ذلك أو إضافة بريدكم الإلكتروني، يرجى الذهاب إلى } other {سيتم إرسال جميع إشعارات البريد الإلكتروني والرسائل النصية القصيرة إلى {phoneNumber} و {email}. لتغيير ذلك، يرجى الذهاب إلى }}",
+  "settingsAppPermissionInfo2": "ستستمر في تلقي تنبيهات الطقس والسلامة حتى وإن قمت بتعطيل الإشعارات، لأن هذه التنبيهات أساسية لضمان سلامة الزوار وضمان سير المتنزه المائي بكفاءة.",
+  "configurationSettingsTitle": "الإعدادات",
+  "personalInformationTitle": "المعلومات الشخصية",
+  "phoneNumber": "رقم الجوال",
+  "emailAddress": "البريد الإلكتروني",
+  "phoneNumber": "رقم الهاتف",
+  "firstName": "الاسم الأول",
+  "lastName": "اسم العائلة",
+  "dateOfBirth": "تاريخ الميلاد",
+  "nationality": "الجنسية",
+  "gender": "الجنس",
+  "accessibilityOptions": "خيارات تسهيلات الاستخدام",
+  "add": "أضف",
+  "customizeProfile": " تخصيص الملف الشخصي",
+  "@_DIGITAL_ID": {
+    "description": "Text for registration feature goes under this category"
+  },
+  "digitalCloseRegisterTitle": "هل أنتم متأكدون؟",
+  "digitalCloseRegisterDescription": "إذا غادرتم الآن، لن يتم تسجيل الحساب.",
+  "digitalCloseRegisterPrimaryText": "لا، متابعة",
+  "digitalCloseRegisterSecondaryText": "نعم، إلغاء",
+  "digitalPersonalDetailsMinCharError": "الحد الأدنى {nrCharacters} حروف",
+  "digitalPersonalDetailsMaxCharError": "الحد الأقصى {nrCharacters} حروف",
+  "digitalPersonalDetailsEmailFormatError": "يبدو أن البريد الالكتروني المدخل غير صحيح",
+  "digitalPersonalDetailsPhoneAlreadyInUse": "هذا البريد الإلكتروني مستخدم بالفعل برقم هاتف مختلف",
+  "digitalPhoneCountryCodeLabel": "رمز",
+  "digitalSmsPageSubtitle": "يرجى <brandCyan>تأكيد</brandCyan> رقم هاتفكم",
+  "digitalSmsPageInfo": "أرسلنا الرمز إلى",
+  "digitalSmsPageVerifyCode": "تأكيد الرمز",
+  "digitalSmsPageResendCode": "إرسال رمز جديد",
+  "digitalSmsPageResendCodeSuccess": "تم إرسال رمز جديد إلى رقم هاتفك.",
+  "digitalSmsPageErrorPhoneBadRequest": "طلب غير صالح: رقم الهاتف أو معرف التحقق أو رمز التحقق مفقود أو غير صالح.",
+  "digitalSmsPageErrorInvalidOTP": "رمز التحقق و/أو معرف التحقق غير صالح",
+  "digitalSmsPageErrorUserOrTenantNotFound": "لم يتم العثور على المستخدم أو المستأجر",
+  "digitalSmsPageErrorPhoneNumberNotConfirmed": "لم يتم تأكيد رقم الهاتف بعد",
+  "digitalSmsPageErrorPhoneUnauthorized": "الرمز المدخل غير صحيح. يرجى المحاولة مرة أخرى.",
+  "digitalSmsPageMaximumResendAttemptsReached": "تم الوصول إلى الحد الأقصى لمحاولات إعادة الإرسال. حاول مرة أخرى لاحقاً.",
+  "digitalSmsPageSessionExpired": "انتهت صلاحية الرمز. اطلب رمزاً جديداً للمتابعة.",
+  "digitalSmsPageAuthenticationUnexpectedError": "حدث خطأ غير متوقع",
+  "digitalOtpPageResendEmailCodeSuccess": "تم إرسال رمز جديد إلى عنوان بريدكم الإلكتروني.",
+  "digitalOtpPageHelperMessageEmailEdit": "سنرسل رمزاً للتحقق من بريدكم الإلكتروني.",
+  "digitalResendOtpCode": " إعادة إرسال الرمز خلال",
+  "digitalRegistrationOrLoginTag": "تسجيل الدخول وإنشاء حساب",
+  "digitalOtpPageHelperMessageEmailValidation": "لم تجد الرمز؟ تحقق من صندوق البريد العشوائي أو الرسائل غير المرغوب بها.",
+  "resendCodeErrorCoolDown": "تم تعليق حسابك مؤقتًا بسبب كثرة محاولات إرسال الرمز.",
+  "maximumVerificationAttemptsReached": "لقد تم ايقاف صلاحية الدخول لحسابك لمدة 60 دقيقة، وذلك لانك قد وصلت للحد الأقصى من محاولات التحقق غير الناجحة.",
+  "maximumResendAttemptsReached": "Maximum resend attempts reached. Try again later.",
+  "authenticationPhoneNumberInvalid": "رقم الهاتف مفقود أو غير صالح",
+  "digitalPersonalLastName": "اسم العائلة",
+  "deletePageOtpTag": "حذف الحساب",
+  "deletePageYesDelete": "نعم، إحذف الحساب",
+  "deletePageTitle": "هل تودون تأكيد حذف حسابكم؟",
+  "digitalTransactionCompleteUserDeleted": "تم حذف ملفكم الشخصي",
+  "digitalTransactionCompleteUserDeletedInformation1": "يمكنكم إعادة تفعيل الحساب خلال سبعة أيام من خلال تسجيل الدخول.",
+  "digitalTransactionCompleteUserDeletedInformation2": "سيتم حذف حسابكم نهائيًا بعد سبعة أيام. يمكنكم لاحقاً إنشاء حساب جديد باستخدام نفس رقم الجوال والبريد الإلكتروني.",
+  "deletePageSubtitle": "في حال حذف حسابكم، لن تتمكنوا من الوصول إلى ما يلي:\n  •  التذاكر والامتيازات وسجل الخيارات المفضلة.\n  •  اقتراحات مخصصة وجدول الزيارة.\n  •  المزايا الحصرية والمكافآت.",
+  "deletePageGoHome": "اكتشف المتنزه",
+  "deleteSuccessMessage": "مرحبًا بعودتك! نحن سعداء لرؤيتك مرة أخرى.",
+  "deleteSuccessPageSubtitle": "إذا غيّرت رأيك، يمكنك إنشاء حساب جديد باستخدام نفس رقم الهاتف أو البريد الإلكتروني.",
+  "deleteSuccessPageTitle": "نأسف لمغادرتك",
+  "deleteAccount": "حذف الحساب",
+  "digitalRegistrationTitle": "<brandCyan>سجلوا</brandCyan> <brandMediumBlue>الآن واستمتعوا </brandMediumBlue> <brandSpecialsPurple>بالمغامرة</brandSpecialsPurple> <brandMediumBlue>في أكواريبيا مدينة القدية!</brandMediumBlue>",
+  "digitalRegistrationTag": "٢/١",
+  "digitalRegistrationTag2": "٢/٢",
+  "digitalRegistrationInformation1": "انشؤوا حسابكم الآن. خطوات بسيطة تفصلكم عن عالم مليء بالمرح!",
+  "digitalRegistrationInformation2": "احجزوا تذاكركم وأديروا حجوزاتكم بكل سهولة من مكان واحد!",
+  "digitalRegistrationInformation3": "الخيار لكم! يمكنكم التخطيط لزيارتكم قبل أو أثناء تواجدكم.",
+  "digitalRegistrationInformation4": "فعلوا الإشعارات!! وابقَوا على اتصال مع نظام الخرائط في المتنزه للحصول على كافة المعلومات حول الألعاب",
+  "digitalTermsSequence1": "اطلعوا على ",
+  "digitalTermsSequence2": "الشروط والأحكام",
+  "digitalTermsSequence3": " و ",
+  "digitalTermsSequence4": "سياسة الخصوصية.",
+  "digitalTermsSequenceView": " اطّلع على ",
+  "digitalTransactionCompleteUserGreeting": "مبروك يا {userName}، حسابك جاهز!",
+  "digitalTransactionCompleteInformation1": "تم إنشاء حسابكم وهويتكم الرقمية بنجاح.",
+  "digitalTransactionCompleteInformation2": "تعمل هويتكم الرقمية على جمع تذاكركم في مكان واحد.",
+  "digitalTransactionCompleteCompleteProfile": "استكمال ملفي الشخصي",
+  "digitalTransactionCompleteAddBiometric": "إضافة البصمة",
+  "digitalTransactionCompleteFaceId": "أضف معرف الوجه",
+  "digitalTransactionCompleteTouchId": "أضف بصمة الإصبع",
+  "digitalTransactionCompleteContinue": "تخصيص ملفي الشخصي",
+  "digitalTransactionCompleteDone": "اكتشفوا المتنزه المائي",
+  "digitalPersonalDetailsTag": "التفاصيل الشخصية 2/3",
+  "digitalPersonalDetailsTitle": "أخبرنا قليلاً <brandCyan>عنك</brandCyan>",
+  "digitalPersonaFirstName": "الاسم الأول",
+  "digitalPersonalSurname": "اسم العائلة",
+  "digitalPersonalDateBirth": "تاريخ الميلاد",
+  "digitalPersonalEmailAddress": " البريد الإلكتروني",
+  "digitalPersonalDateHint": "",
+  "digitalPersonalEmailHint": "سنرسل رمزًا للتحقق من بريدك الإلكتروني.",
+  "digitalPhoneNumberSubtitle": "سجلوا الدخول إلى حسابكم أو أنشئوا حسابًا جديدًا بخطوات بسيطة وسريعة!",
+  "digitalPhoneNumberTitle": "أدخل <brandCyan>رقم هاتفك</brandCyan> وابدأ المغامرة!",
+  "digitalPhoneNumberInputLabel": "رقم الهاتف",
+  "digitalPhoneNumberContinue": "متابعة",
+  "digitalPhoneNumberCannotStartWithZero": "لا يمكن لرقم الهاتف أن يبدأ بصفر.",
+  "digitalPhoneNumberInvalidCharacter": "لا يمكن لرقم الهاتف أن يحتوي على رموز خاصة.",
+  "digitalPhoneNumberTooLong": "يُرجى التأكد من أن رقم الجوال المدخل يتطابق مع عدد أرقام وصيغة البلد المختارة.",
+  "digitalPhoneNumberTooShort": "رقم هاتفك غير مكتمل. تأكد من إدخال رقم هاتفك كاملاً.",
+  "digitalPhoneNumberOnlyDigits": "يمكن لرقم الهاتف أن يحتوي على أرقام فقط.",
+  "digitalOtpPageErrorInvalidCode": "الرمز المدخل غير صحيح. يرجى المحاولة مرة أخرى.",
+  "digitalPersonalDetailsTitleExistingUser": "نظرة على معلومات ملفكم الشخصي.",
+  "digitalBiometricsActivationTitle": "تفعيل المصادقة <brandSpecialsPurple>{biometric}</brandSpecialsPurple>",
+  "digitalBiometricsTagLine": "المصادقة باستخدام البصمة",
+  "digitalBiometricsActivationInformation1": "احصل على وصول سريع وآمن للتطبيق.",
+  "digitalBiometricsActivationInformation2": "جميع البصمات المسجلة على هذا الهاتف ستكون قادرة على الدخول للتطبيق.",
+  "digitalBiometricsActivationInformation3": "يمكنك إلغاء ذلك من إعدادات الأمان في حسابك.",
+  "digitalBiometricsActivationReason": "الرجاء المصادقة لتفعيل المقاييس الحيوية",
+  "digitalBiometricsActivationContinue": "متابعة",
+  "digitalBiometricsActivationRetry": "أعد المحاولة",
+  "digitalBiometricsActivatedGreeting": "ممتاز يا {userName}، تم إضافة بصمتك بنجاح!",
+  "digitalBiometricsActivatedInformation1": "تم تحديث إعدادات الأمان لحسابك.",
+  "digitalBiometricsActivatedInformation2": "بإمكانك الآن استخدام بصمتك لدخول التطبيق. لتغيير ذلك، يرجى الذهاب إلى إعدادات الحساب.",
+  "digitalBiometricsActivatedContinue": "تخصيص ملفي الشخصي",
+  "digitalBiometricsActivatedDone": "اكتشف المتنزه",
+  "digitalBiometricsToggleFaceId": "بصمة الوجه",
+  "digitalBiometricsToggleTouchId": "بصمة الإصبع",
+  "digitalBiometricsToggleDefault": "البصمة",
+  "digitalBiometricsEnabledSuccess": "تم تفعيل {biometric}.",
+  "digitalBiometricsEnableError": "تعذّر تفعيل {biometric}. يرجى المحاولة مرة أخرى.",
+  "digitalBiometricsDisabledSuccess": "تم تعطيل {biometric}. في تسجيل الدخول التالي، سنطلب رقم هاتفكم للوصول إلى حسابكم.",
+  "digitalBiometricsPermissionDialogTitle": "تفعيل صلاحيات {biometric}",
+  "digitalBiometricsPermissionDialogDescription": "للإستمرار، يجب تفعيل صلاحيات {biometric} من إعدادات الهاتف",
+  "digitalBiometricsPermissionDialogContinue": "الذهاب إلى إعدادات الجهاز",
+  "digitalBiometricsPermissionDialogCancel": "إلغاء",
+  "digitalGoToDeviceSettigs": "اذهب الى اعدادات الجهاز",
+  "digitalPermissionsEnableNotifications": "تفعيل الإشعارات",
+  "notifications": "الإشعارات",
+  "digitalPermissionsEnableNotificationsDesc": "يرجى تفعيل الإشعارات في إعدادات جهازكم لتلقي التحديثات والتنبيهات. قد تتضمن الإشعارات أصواتًا وتنبيهات وأيقونات.",
+  "digitalPermissionsEnableGeolocation": "الموقع معطل",
+  "digitalPermissionsEnableGeolocationDesc": "للإستمرار، يجب تفعيل صلاحيات الموقع من إعدادات الهاتف.",
+  "digitalPermissionsNotificationsUpdated": "تم تحديث تفضيلات الإشعارات لديكم.",
+  "digitalPermissionsNotificationsUpdateFailed": "لم نتمكن من تحديث تفضيلات الإشعارات الخاصة بكم. يرجى المحاولة مرة أخرى.",
+  "digitalPermissionsGeolocationUpdated": "تم تحديث موقعكم الجغرافي.",
+  "digitalPermissionsGeolocationUpdateFailed": "لم نتمكن من تحديث موقعكم الجغرافي. يرجى المحاولة مرة أخرى.",
+  "digitalPermissionsPromotionUpdated": "تم تحديث تفضيلات العروض الخاصة بكم.",
+  "digitalPermissionsPromotionUpdateFailed": "لم نتمكن من تحديث تفضيلات العروض الخاصة بكم. يرجى المحاولة مرة أخرى.",
+  "digitalPermissionsAlertUpdated": "تم تحديث تفضيلات التنبيهات الخاصة بكم.",
+  "digitalPermissionsAlertUpdateFailed": "We couldn't update your alert preferences. Please, try again.",
+  "digitalGetStartedTag": "ابدأوا الآن",
+  "profileDetails": "معلومات الملف الشخصي",
+  "@_OTHER_FEATURES": {
+    "description": "Text for _OTHER_FEATURES feature goes under this category"
+  },
+  "digitalSearchResults": "نتائج البحث",
+  "verificationFailedTitle": "عذراً، حدث خطأ غير متوقع",
+  "verificationFailedMessage": "فشل التحقق. نواجه حاليًا بعض الصعوبات التقنية. يرجى المحاولة مرة أخرى لاحقًا أو التواصل مع الدعم للحصول على المساعدة.",
+  "errorPageMessage": " يرجى المحاولة مرة أخرى.",
+  "errorPageTopButton": "إعادة المحاولة",
+  "errorPageBottomButton": "العودة",
+  "genderSelectorScreenTitle": "الجنس",
+  "male": "ذكر",
+  "female": "أنثى",
+  "settingsSupport": "الدعم",
+  "settingsHelpAndSupport": "الدعم والمساعدة",
+  "settingsSupportDesc": "احصلوا على إجابات لجميع تساؤلاتكم",
+  "settingsAccessibilityOptionChanged": "تم حفظ خيارات تسهيلات الاستخدام بنجاح.",
+  "accessibilityOptionSaveError": "لم يتم حفظ خيارات الوصول الخاصة بك. يرجى المحاولة مرة أخرى.",
+  "notificationsTitle": "ابقوا على اطلاع!",
+  "notificationTitle": "الإشعارات",
+  "notificationsDesc": "للحصول على آخر التحديثات والعروض، قوموا بتفعيل إشعارات التطبيق",
+  "notificationsButton": "إعداد الإشعارات",
+  "rides": "الألعاب",
+  "entertainment": "الترفيه",
+  "dinning": "المطاعم",
+  "shopping": "التسوق",
+  "shoppingHomeScreen": "التسوق",
+  "avatarSelectorScreenTitle": "اختاروا الأفاتار الخاص بكم",
+  "@avatarSelectorScreenTitle": {
+    "description": "Title for the select avatar screen"
+  },
+  "avatarSelectorScreenButtonText": "اختاروا هذا الأفاتار",
+  "@avatarSelectorScreenButtonText": {
+    "description": "Button text for selecting the avatar"
+  },
+  "avatarSelectorAvatarUpdatedSucceed": "تم تحديث الأفاتار الخاص بكم.",
+  "@avatarSelectorAvatarUpdatedSucceed": {
+    "description": "Message shown when avatar is successfully updated"
+  },
+  "avatarSelectorAvatarUpdatedError": "لم نتمكن من حفظ الأفاتار الخاص بكم. يرجى إعادة المحاولة.",
+  "@avatarSelectorAvatarUpdatedError": {
+    "description": "Message shown when avatar update fails"
+  },
+  "visitPlanner": "منظم الزيارات",
+  "favourites": "الخيارات المفضلة",
+  "errorPageTitle": "حدث مشكلة",
+  "commonSkip": "تخطي",
+  "profileSetupStepperTagLine": "إعداد الملف الشخصي",
+  "helpAndSupportTopicsSectionTitle": "المواضيع",
+  "helpAndSupportCategoryTitle": "الفئة",
+  "helpAndSupportSubCategoryTitle": "الفئة الفرعية",
+  "helpAndSupportCategoryDescription": "الوصف حول الفئة هنا.",
+  "helpAndSupportStillNeedHelpTitle": "هل لا تزال بحاجة إلى مساعدة؟ ",
+  "helpAndSupportChatWithUs": "تواصلوا معنا",
+  "helpAndSupportChatWithUsDescription": "وصف الفئة هنا.",
+  "helpAndSupportEmailUs": "راسلونا عبر البريد الإلكتروني",
+  "helpAndSupportEmailUsDescription": "وصف الفئة هنا.",
+  "helpAndSupportCallUs": "اتصلوا بنا",
+  "helpAndSupportcallUsDescription": "وصف الفئة هنا.",
+  "helpAndSupportParkServices": "خدمات المنتزه",
+  "helpAndSupportParkServicesDescription": "للمزيد من المعلومات اتصل على <brightblue>{phoneNumber}</brightblue>",
+  "helpAndSupportEmergencyAssistance": "المساعدة الطارئة",
+  "helpAndSupportEmergencyAssistanceDescription": "اتصل بنا على <brightblue>{phoneNumber}</brightblue>",
+  "helpAndSupportLostAndFound": "المفقودات",
+  "helpAndSupportLostAndFoundDescription": "للإبلاغ عن طفل أو غرض مفقود <brightblue>{phoneNumber}</brightblue>",
+  "callParkServicesTitle": "الاتصال بخدمات المنتزه",
+  "callEmergencyAssistanceTitle": "الاتصال بالمساعدة الطارئة",
+  "callLostAndFoundTitle": "الإبلاغ عن طفل مفقود أو ممتلكات",
+  "emailError": "إعداد تطبيق بريد إلكتروني",
+  "emailSubject": "الموضوع",
+  "emailErrorMessage": "لإرسال بريد إلكتروني، تحتاج إلى إعداد تطبيق بريد إلكتروني على هذا الجهاز أولاً.",
+  "visitPlannerCreateYourOwnCTA": "خططوا لزيارتكم",
+  "visitPlannerCreateYourOwnDescriptionCTA": "ننتقي بعناية أروع ما لدينا، وأنتم تختارون ما يليق بكم!",
+  "vpCustomTripTitle": "رحلة مفصلة {currentStep}/{totalSteps}",
+  "@vpCopyVisitTitle": {
+    "placeholders": {
+      "currentStep": {
+        "type": "int"
+      },
+      "totalSteps": {
+        "type": "int"
+      }
+    }
+  },
+  "vpCopyVisitTitle": "نسخ الزيارة {currentStep}/{totalSteps}",
+  "vpTripDateQuestionVariation": "متى تخطط للزيارة؟",
+  "myVisitSignUpTitle": "أدخل رقمك وابدأ مغامرتك!",
+  "myVisitSignUpDescription": "قم بتسجيل الدخول لحفظ والوصول بسهولة إلى رحلاتك المفضلة، والمطاعم، والتجارب.",
+  "adult": "بالغ",
+  "ages12": "من 12 سنة فما فوق",
+  "child": "طفل",
+  "ages4to12": "من 5 إلى 12 سنة",
+  "infant": "رضيع",
+  "ages0to4": "من 0 إلى 4 سنوات",
+  "senior": "كبار السعوديين",
+  "ages65Plus": "من 60 سنة فما فوق",
+  "alertNotificationCta": "احصل على التعليمات",
+  "validIdRequired": "يتطلب بطاقة هوية سارية",
+  "peopleOfDetermination": "الاشخاص ذوي الإعاقة",
+  "peopleWithDisabilities": "ذوي الإعاقات المسجلة",
+  "companion": "مرافق",
+  "driversAndNannies": "يشمل مقدمي الرعاية، السائقين، والمربيات",
+  "noTicketRequired": "لا حاجة لتذكرة",
+  "ridesAndExperiences": "الألعاب والتجارب",
+  "exploreDirectionToAttraction": "الإتجاهات",
+  "vpCreateMyTripCTA": "صمم رحلتي",
+  "createTripFormTemplateSuccessMessage": "<brandYellow>{templateName}</brandYellow> أصبحت جاهزة!",
+  "createTripCompleteTransactionButtonTitle": "عرض زياراتي",
+  "createTripCompleteTransactionInfoPoint1": "خصصوا خطة رحلتكم لتناسبكم أكثر بإضافة التفاصيل وتعديلها",
+  "immersiveLandsHeadline": "تجارب <primary>مائية</primary> مميزة <brandYellow>لأول مرة</brandYellow> في السعودية",
+  "makeTheMostOfYourVisit": "استفيدوا من زيارتكم إلى أقصى حد!",
+  "homeCard2Description": " تذاكر دخولكم إلى المتنزه",
+  "homeCard2Title": "احجزوا",
+  "exploreAdvancedFiltersHeightRequirementLabel": "أدخلوا طول الراكب للتحقق من الأهلية",
+  "exploreAdvancedFiltersHeightRequirementUnit": "سم",
+  "exploreAdvancedFiltersWeightRequirementLabel": "أدخلوا وزن الراكب للتحقق من الأهلية.",
+  "exploreAdvancedFiltersWeightRequirementUnit": "كج",
+  "homeCard3Description": "زيارتكم بكل سهولة",
+  "homeCard3Title": "خططوا",
+  "planYourVisit": "احجز تذاكرك",
+  "planLimitExceedsMessage": "لقد وصلت إلى الحد الأقصى وهو {limit} رحلات. يرجى إزالة خطة موجودة لإنشاء خطة جديدة.",
+  "prepForDayFullOfFun": "احصل على تذاكر لزيارتك القادمة",
+  "startPlanning": "ابدأ التخطيط",
+  "bookYourVisit": "احجزوا زيارتكم",
+  "bookYourTickets": "احجزوا تذاكركم",
+  "getTicketsForYourNextVisit": "احصل على تذاكر لزيارتك القادمة",
+  "bookNow": "احجز الآن",
+  "resumeYourBooking": "أكملوا عملية الحجز",
+  "dontMissOutFinishYourPurchase": "لا تفوّتوا الفرصة، أكمِلوا عملية الشراء",
+  "payNow": "ادفعوا الآن",
+  "exploreHomeBook": "استكشاف",
+  "recordBreakingRides": "ركوب قياسي",
+  "addonsHomeBook": "الإضافات",
+  "forTheAddedThrill": "لإضافة الإثارة",
+  "vipBundle": "حزمة VIP",
+  "forTheAddedThrillvip": "التي تضيف لمسة إضافية من الدهشة",
+  "templateEditVisitTitle": "تعديل الزيارة",
+  "templateEditingTitle": "التفضيلات",
+  "useTemplateButtonTitle": "استخدموا هذا النموذج",
+  "makePaymentsFast": "يمكنك إجراء المدفوعات بسرعة وسهولة في أي متجر أو منفذ طعام!",
+  "accessParkAddOns": "ادخل إلى الحديقة وأي إضافات أو خدمات أخرى باستخدام سوارك!",
+  "deLinkWristband": "يمكنك إلغاء ربط سوارك في أي وقت من قسم 'ملفي الشخصي'.",
+  "privacyPolicy": "سياسة الخصوصية",
+  "immersiveLandsCardButtonCTA": "اكتشفوا اللعبة",
+  "immersiveLandsCardButtonCTAWithExperience": "اكتشفوا التجربة",
+  "privacyPolicyUpdatedTitle": "تم <brandCyan>تحديث</brandCyan> الشروط والأحكام",
+  "privacyPolicyTermsAndConditions": "الشروط و الاحكام",
+  "privacyVersion": "نسخة",
+  "privacyPolicyDescription": "لمتابعة استخدام التطبيق، الرجاء مراجعة الشروط والأحكام وسياسة الخصوصية المحدثة.",
+  "active": "نشط",
+  "used": "مستخدم",
+  "ticketVisitPlanningTitle": "خطط لزيارتك الآن",
+  "ticketDetailsParkNameTitle": "أكواربيا القدية",
+  "ticketDetailsParkCityTitle": "المزاحمية 13776",
+  "ticketEmptyStateTitle": "لا يوجد لديكم أي تذاكر حتى الآن!",
+  "ticketEmptyStateDescription": "مغامرتكم تبدأ هنا. اشتروا تذاكركم وافتحوا الباب ليوم مليئ بالمغامرات في أكواريبيا مدينة القدية.",
+  "ticketEmptyBuyTicketButtonTitle": "اشتروا تذاكركم الآن",
+  "ticketEmptyLinkTicketButtonTitle": "ربط تذكرة",
+  "digitalCloseCancelBookingDescription": "في حال تم الإلغاء، سيتم فقد جميع الاختيارات التي قمتم بها، وستحتاجون إلى إعادة بدء الحجز من البداية لشراء التذاكر.",
+  "cancelBooking": "نعم، إلغاء",
+  "keepSelections": "لا، متابعة",
+  "digitalCloseCancelBookingTitle": "هل أنتم متأكدون من الإلغاء؟",
+  "settingsDeleteAccount": "حذف الحساب",
+  "phoneDialerError": "غير قادر على بدء المكالمة، يرجى المحاولة مرة أخرى",
+  "phoneDialerInitError": "اتصل بشبكة واي فاي أو قم بإيقاف تشغيل وضع الطيران لإجراء مكالمة.",
+  "emailAppNotFound": "لإرسال بريد إلكتروني، ستحتاج إلى إعداد تطبيق البريد الإلكتروني على هذا الجهاز أولاً.",
+  "openUrlFailed": "تعذر فتح الرابط المطلوب.",
+  "genericError": "حدث خطأ غير متوقع. يرجى المحاولة لاحقًا.",
+  "b2cBookingStepPaymentTitle": "اختاروا <brandWhite>وسيلة الدفع</brandWhite>",
+  "b2cBookingStepPaymentDescription": "لإكمال طلبكم، يرجى اختيار وسيلة الدفع المفضلة.",
+  "b2cBookingStepPoliciesTag": "الدفع",
+  "guestAccessPromptFavouriteLoginOrSignUpButton": "تسجيل دخول أو إنشاء حساب",
+  "guestAccessPromptFavoriteLoginButton": "تسجيل الدخول",
+  "manageTicketTitle": "إدارة هذه التذكرة",
+  "closeLabel": "يغلق",
+  "getMoreAddOns": "احصل على المزيد من الإضافات",
+  "reScheduleOrCancel": "إعادة الجدولة أو الإلغاء",
+  "reScheduleOrCancelCallService": "لإعادة جدولة أو إلغاء تذكرتك، يرجى الاتصال بفريق خدمات الضيوف لدينا على الرقم <boldBlue>{phoneNumber}</boldBlue>",
+  "callGuestService": "اتصل بخدمات الضيوف",
+  "b2cBookingStepTicketSelectionTag": "اختيار التذاكر",
+  "b2cBookingStepGuestsTag": "اختيار التذكرة",
+  "b2cBookingStepCheckoutTag": "الدفع",
+  "b2cBookingStepLoginTitle": "سجلوا الدخول أو <brandWhite>أنشئوا</brandWhite> حسابكم",
+  "b2cBookingStepTicketSelectionTitle": "اختاروا <brandWhite>تذكرتكم</brandWhite>",
+  "b2cBookingStepLoginDescription": "للمتابعة، يرجى إنشاء حسابكم أو سجلوا الدخول إلى حسابكم الحالي.",
+  "b2cBookingStepTicketSelectionDescription": "اختاروا نوع التذكرة المُراد شراؤها",
+  "b2cBookingStepDateSelectionTitle": "<brandWhite>التاريخ</brandWhite> والصلاحية",
+  "b2cBookingStepGuestsTitle": "عدد <brandWhite>التذاكر</brandWhite>",
+  "b2cBookingStepGuestPackagesTitle": "عدد <brandWhite>التذاكر<brandWhite>",
+  "b2cBookingStepGuestsDescription": "اختاروا عدد التذاكر المُراد شراؤها.",
+  "b2cBookingStepGuestsDescriptionSurfing": "اختاروا عدد التذاكر التي ترغبون بشرائها. يحتاج كل من سيقوم بركوب الأمواج أو التزلج على المياه في سيرفتوبيا إلى تذكرة راكب أمواج. يمكنكم إضافة تذاكر للأفراد الذين سيزورون المتنزه المائي دون تجربة ركوب الأمواج. وإذا لم يكن أيٌّ من أفراد مجموعتكم سيركبون الأمواج، عودوا إلى اختيار التذاكر واختاروا تذكرة يوم واحد أو التذكرة السنوية!",
+  "b2cBookingStepDateSelectionDescription": "اختاروا تاريخ زيارتكم. جميع الأسعار معروضة على التقويم.",
+  "b2cBookingStepPoliciesTitle": "مرحبًا {username}، تحقق من <brandWhite>قواعد</brandWhite> وسياسات المتنزه الترفيهي",
+  "b2cBookingStepParkPoliciesDescription": "يرجى الاطلاع على التعليمات والإرشادات والشروط التي تنطبق على حجزكم وزيارتكم القادمة.",
+  "b2cBackToCart": "العودة إلى سلة المشتريات",
+  "b2cTryAgainPayment": "يرجى المحاولة مرة أخرى أو اختيار وسيلة دفع أخرى لإتمام الحجز.",
+  "b2cBookingStepCartAddMoreTicketsButton": "إضافة المزيد من التذاكر",
+  "b2cBookingStepCartTitle": "العناصر الموجودة في <brandWhite>السلة</brandWhite>",
+  "b2cBookingStepCartDescription": "اطّلعوا على اختياراتكم قبل الدفع",
+  "b2cBookingStepCartTag": "سلّة مشترياتي",
+  "parkListLoadError": "حدث خطأ أثناء تحميل قائمة المتنزهات الترفيهية. يرجى إعادة المحاولة.",
+  "errorLoadingResults": "حدث خطأ أثناء تحميل النتائج. يرجى إعادة المحاولة.",
+  "errorLoadingFilters": "حدث خطأ أثناء تحميل الفلاتر. يُرجى المحاولة مرة أخرى.",
+  "errorUpdatingFilters": "Cannot update filters: current filter data not loaded.",
+  "errorApplyingFilters": "Failed to fetch filter results count",
+  "oops2": "عذراً",
+  "couldNotLoadMap": "لم نتمكن من تحميل خريطة الحديقة.",
+  "downloadInfo": "تحميل المعلومات",
+  "notificationPermissionWelcomeMessage": "احصلوا على تحديثات فورية حول أوقات الإنتظار والفعاليات الخاصة. قم بتفعيل الإشعارات لتحسين تجربتكم!",
+  "notificationPermissionWelcomeTitle": "مرحباً {firstName}!",
+  "@notificationPermissionWelcomeTitle": {
+    "placeholders": {
+      "firstName": {
+        "type": "String"
+      }
+    }
+  },
+  "notificationPermissionAllowButton": "السماح بالإشعارات",
+  "notificationPermissionNotNowButton": "ليس الآن",
+  "referenceNumber": "Reference number: {number}",
+  "b2cGoToMyTickets": "Go to my tickets",
+  "b2cYourTicketsAreReady": "تذاكركم جاهزة، يا {userName}!",
+  "exploreResultsAreTakingLongerThanExpected": "تستغرق النتائج وقتًا أطول من المعتاد. يرجى الانتظار أو المحاولة مرة أخرى.",
+  "exploreTryAgain": "حاول مرة أخرى",
+  "exploreLoading": "جاريٍ التحميل...",
+  "exploreSearchCancel": "إلغاء",
+  "exploreSortByAZ": "أ-ي",
+  "exploreSortByZA": "ي-أ",
+  "exploreSortByDistance": "المسافة",
+  "exploreSortByWaitTime": "مدة الإنتظار",
+  "exploreSortByTitle": "رتب حسب",
+  "exploreSortByApply": "تفعيل",
+  "exploreSortByClose": "إغلاق",
+  "sortBy": "ترتيب ",
+  "exploreYourFavoriteAwaits": "خياراتكم المفضلة بانتظاركم!",
+  "exploreYourFavoriteAwaitsDescription": "احفظوا العناصر المفضلة هنا لتتمكنوا من الوصول إليها بسهولة في المرة القادمة. ابدأوا بالاستكشاف واضغطوا على أيقونة النجمة لإضافة العناصر إلى قائمتكم!",
+  "vpGuestUserAccessPromptMainTitle": "خططوا لزيارتكم المثالية إلى أكواريبيا مدينة القدية!",
+  "vpGuestUserAccessPromptSubTitle": "خططوا لزيارتكم",
+  "vpGuestUserAccessPromptSubTitleDescription": "تسجيل الدخول لاكتشاف التوصيات الشخصية والعروض الحصرية، ومشاركة التذاكر مع العائلة والأصدقاء لتنظيم زيارتكم المثالية.",
+  "guestAccessPromptFavoriteLoginOrSignUpButton": "تسجيل الدخول أو إنشاء حساب",
+  "vpTripDateQuestion": "متى تريد الزيارة؟",
+  "vpGuestUserAccessPromptHeaderTitle": "ابدأوا الآن",
+  "vpFlexible": "تاريخ مرن",
+  "vpExactDate": "تاريخ محدد",
+  "vpInfoMessage": "<bold>نصيحة هامة!</bold> أضيفوا خياراتكم المفضلة هنا الآن ليتم إضافتها إلى خطة رحلتكم.",
+  "vpDayPreferenceTitle": "اليوم المفضل",
+  "vpMonth": "شهر",
+  "participantsVpInfoMessage": "نصيحة هامة! الدخول مجاني للرضع والأطفال دون الاربع أعوام، ولكن يرجى تسجيلهم أدناه!",
+  "talkActivitesTitle": "جميع الأنشطة بإنتظاركم",
+  "talkActivitesSubtitle": "ما أنواع الأنشطة أو التجارب التي تثير اهتمام مجموعتكم؟",
+  "talkVpInfoMessage": "<bold>نصيحة هامة!</bold> فيما يلي مجموعة من الألعاب التي تم تجربتها بنجاح، مع مراعاة مستويات التشويق المختلفة لتناسب جميع الأذواق.",
+  "vpActionPackedTitle": "إلى أي مدى ترغبون أن يكون يومكم مليئًا بالتشويق والمغامرة؟",
+  "actionPackedInfoMessage": "<bold>نصيحة هامة!</bold> خططوا ليومكم في أكواريبيا مدينة القدية بطريقة تعكس أسلوبكم المفضل في الاستمتاع!",
+  "templateEditPersonaliseAdventure": "صمموا مغامرتكم الجديدة!",
+  "templateEditYourTheme": "اختاروا سمة رحلتكم",
+  "myVisitFavoriteListEmptyStateLabel": "خياراتكم المفضلة بانتظاركم!",
+  "myVisitFavoriteListEmptyStateDescription": "احفظوا العناصر المفضلة هنا لتتمكنوا من الوصول إليها بسهولة في المستقبل. إبدأوا بالاستكشاف واضغطوا على أيقونة النجمة لإضافتها إلى قائمتكم!",
+  "onboardingPrimaryAction": "اكتشفوا المتنزه المائي",
+  "exploreNoFavourites": "لا توجد خيارات مفضلة",
+  "vpCreatedTripDaysToGoTitle": "{num} أيام متبقية",
+  "addToList": "إضافة الخيارات المفضلة",
+  "creaditDebitCardTitle": "بطاقات الائتمان والخصم",
+  "creaditDebitCardDesc": "أضيفوا تفاصيل بطاقتكم لإجراء عمليات الشراء بشكل أسرع والاستمتاع بدفع سهل وسلس وسريع! يمكنكم حفظ ما يصل إلى أربع بطاقات في حسابكم.",
+  "addNewCard": "إضافة بطاقة جديدة",
+  "defaultLabel": "الإعدادات الإفتراضية",
+  "otherLabel": "أخرى",
+  "expiry": "تاريخ الانتهاء",
+  "expired": "انتهت صلاحيتها في",
+  "expiredOn": "تاريخ الإنتهاء",
+  "paymentMethodInfo": "يمكنكم حفظ ما يصل إلى أربع بطاقات في حسابكم. إذا كنتم ترغبون في إضافة بطاقة إضافية، يرجى حذف بطاقة.",
+  "paymentMethodsTitle": "طرق الدفع",
+  "b2cNoTicketsTitle": "ليس لديك أي تذاكر بعد",
+  "b2cNoTicketsDescription": "ابدأ رحلتك واحصل على تذاكر ليومك المثير.",
+  "b2cNoTicketsButtonText": "اشتر تذكرتك الآن",
+  "b2cBookingAgeRestrictiobBsTitle": "لحظة ... قبل أن تكملوا",
+  "shareTicketMessage": "🎢 مرحبًا! سأشارك معك تذكرة لـ Aquarabia. قم بتنزيل تطبيق Aquarabia اليوم. استمتع! https://aquarabiaqiddiyacity.com/",
+  "shareTicketSubject": "تذكرة Aquarabia",
+  "shareButtonText": "مشاركة",
+  "cardType": "{name} بطاقة",
+  "deleteCard": "حذف البطاقة",
+  "saveDefault": "حفظ كطريقة الدفع الأساسية",
+  "b2cEmptyCartErrorTitle": "لا توجد تذاكر في سلة مشترياتكم!",
+  "b2cEmptyCartErrorMessage": "يرجى البدء من جديد لحجز التذاكر.",
+  "b2cEmptyCartErrorTryAgainButton": "احجزوا التذاكر",
+  "b2cBookingStepAddonsTitle": "اجعلوا <brandWhite>يومكم</brandWhite> رائع أكثر!",
+  "b2cBookingStepAddonsDescription": "احصلوا على الإضافات وارتقوا بتجربتكم في أكواريبيا مدينة القدية!",
+  "b2cBookingStepAddonsTag": "الإضافات",
+  "b2cSelectAddonsSaveSelectionButton": "حفظ الإختيار",
+  "b2cEmptyCartErrorStartAgainButton": "احجزوا التذاكر",
+  "b2cEmptyCartErrorMessage": "يرجى البدء من جديد لحجز التذاكر.",
+  "vpNeedsAndWantsTitle": "هل لديكم أي متطلبات أو رغبات خاصة؟",
+  "optionalMessageFavOptions": "<bold>نصيحة هامة!</bold> أضيفوا خياراتكم المفضلة هنا الآن ليتم إضافتها إلى خطة رحلتكم.",
+  "vpMyFavourites": "خياراتي المفضلة",
+  "includeFavourites": "إضافة الخيارات المفضلة",
+  "templateEditNoTicketsYet": "لا يوجد لديك أي تذاكر",
+  "templateEditBuyNow": "احصلوا على تذاكركم",
+  "deleteVisitTitle": "هل أنتم متأكدون من عملية حذف {TemplateName}?",
+  "deleteVisitDescription": "لا يمكن التراجع عن هذا الإجراء، وسيتم فقدان الخيارات المفضلة.",
+  "confirmDeleteVisit": "نعم، قم بحذف الزيارة",
+  "templateDeletedSuccessMessage": "تم إلغاء {template}",
+  "tripBannerTitleNoTickets": "احجز تذاكرك",
+  "tripBannerTitleWithTickets": "عرض التذاكر",
+  "editList": "تعديل اللائحة",
+  "saveChanges": "حفظ التعديلات",
+  "removedFromListSuccess": "تمت إزالة {name} من قائمتك",
+  "templateRideAndAttractionTitle": "الألعاب والتجارب",
+  "templateNameTitle": "نموذج",
+  "templateNameDesc": "لوريم إيبسوم دولور سيت أميت كونز أديبسينغ إليت دولور.",
+  "vpCreateMyTripCTA": "صمم رحلتي",
+  "createMyTripTitle": "صمم رحلتي",
+  "createTripFromTemplateCompleteTransactionButtonTitle": "عرض زياراتي",
+  "createTripFromTemplateCompleteTransactionInfoPoint1": "خصصوا خطة رحلتكم لتناسبكم أكثر بإضافة التفاصيل وتعديلها",
+  "createTripFromTemplateCompleteTransactionInfoPoint2": "لتصفح وإدارة زياراتكم عبر الخريطة أو عرض القائمة، اضغطوا على أيقونة الاستكشاف",
+  "ridesAndAttractions": "الألعاب والتجارب",
+  "vpCopyThisVisit": "نسخ الزيارة",
+  "digitalNewsletter": "أرغب في تلقي الأخبار والتحديثات",
+  "b2cBookingStepVIPGuestsDescription": "اختاروا حتى 12 شخصاً ليشارككم تجربتكم المميزة.",
+  "b2cBookingStepDateSelectionVIPDescription": "اختاروا تاريخ زيارتكم. جميع الأسعار معروضة على التقويم. جميع الأسعار المعروضة خاصة بتذكرة البالغ، بالريال السعودي وتشمل ضريبة القيمة المضافة",
+  "b2cBookingStepVIPGuestsTitle": "<brandWhite>من</brandWhite> سيأتي معكم؟",
+  "b2cBookingAgeRestrictionWarning": "لشراء التذاكر عبر مناصتنا الرقمية ، يجب أن يكون عمرك {age} عاماً أو أكثر",
+  "@b2cBookingAgeRestrictionWarning": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "b2cBookingAgeRestrictionBsTitle": "لحظة ... قبل أن تكملوا",
+  "b2cBookingAgeRestrictionBsDescription": "لشراء التذاكر عبر مناصتنا الرقمية ، يجب أن يكون عمرك {age} عاماً أو أكثر. يرجى تأكيد عمرك.",
+  "@b2cBookingAgeRestrictionBsDescription": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "b2cBookingAgeRestrictionPrimaryBtn": "نعم، عمري {age} عامًا أو أكثر",
+  "@b2cBookingAgeRestrictionPrimaryBtn": {
+    "placeholders": {
+      "age": {
+        "type": "int"
+      }
+    }
+  },
+  "b2cBookingAgeRestrictionSecondaryBtn": "لا، إلغاء",
+  "b2cAccountVerificationTitle": "هل يوجد لديكم حساب معنا؟",
+  "b2cAccountVerificationDescription": "إذا كان لديكم حساب في Aquarabia مدينة القدية بالفعل، يرجى تسجيل الدخول الآن. أو يمكنك إتمام الشراء كضيف.",
+  "b2cAccountVerificationPrimaryButton": "سجلوا الدخول أو أنشئوا حسابكم",
+  "b2cAccountVerificationSecondaryButton": "إتمام الشراء كضيف",
+  "checkYourConnectionToAccessFullFeatures": "يرجى التحقق من الاتصال بالإنترنت للوصول إلى كافة ميزات التطبيق.",
+  "commonPersonalInformation": "المعلومات الشخصية",
+  "b2cEmailValidatedSuccess": "Your email has been validated and added to your profile",
+  "connectedAquaTapTicketTitle": "سوار المعصم",
+  "aquaTapTicketConnectedStateTitle": "متصل",
+  "exploreDining": "المطاعم",
+  "exploreEntertainment": "الترفيه",
+  "exploreFacilities": "المرافق",
+  "exploreFavorites": "الخيارات المفضلة",
+  "exploreFavouritesHeadline": "<brandGreen>بتجربتكم</brandGreen> <brandCyan>استمتعوا</brandCyan> في المتنزه!",
+  "exploreFavouritesSubheadline": "احفظوا خياراتكم المفضلة",
+  "exploreFavouritesDescription": "يمكنكم الوصول بسرعة إلى الألعاب والمعالم والفعاليات التي ترغبون في زيارتها!",
+  "exploreRidesAndAttractions": "الألعاب والتجارب",
+  "exploreShopping": "التسوق",
+  "wearablePairingSuccessMsg": "تم ربط جهاز Aquatap الخاص بك الآن بتذكرتك.",
+  "cameraDisabledBSTitle": "الكاميرا معطّلة",
+  "cameraDisabledBSDescription": "للمتابعة، يجب السماح بالوصول إلى الكاميرا من إعدادات الجهاز.",
+  "qrScannerTitle": "امسح رمز الاستجابة السريعة",
+  "selectTicketToLinkTitle": "قم بربط جهاز Aquatap بتذكرة",
+  "selectTicketToLinkDescription": "قم بتسجيل الدخول إلى حسابك أو اشترك في بضع خطوات بسيطة. الأمر سريع وسهل!",
+  "pairingMethodTitle": "اختر كيفية توصيل أكواتاب الخاص بك",
+  "pairingMethodDescription": "استمتع بالمدفوعات السريعة والسهلة مع أكواتاب NFC أثناء استكشاف الحديقة.",
+  "pairViaQRTitle": "امسح رمز الاستجابة السريعة الموجود على ظهر أكواتاب",
+  "pairViaQRDescription": "يرجى التأكد من أنك في منطقة مضاءة جيدًا عند المسح لضمان عملية سلسة وسهلة.",
+  "descriptionOfScanViaQrOption": "امسح رمز الاستجابة السريعة الموجود في الجزء الخلفي من جهاز Aquatap الخاص بك",
+  "titleOfScanNfcOption": "امسح NFC",
+  "descriptionOfScanNfcOption": "اكتشف معرف Aquatap الخاص بك تلقائيًا باستخدام هاتفك",
+  "titleOfManualCodeOption": "رمز يدوي",
+  "descriptionOfManualCodeOption": "أدخل رمز المعرف الموجود في الجزء الخلفي من جهاز Aquatap الخاص بك",
+  "aquatapActivationTag": "تفعيل أكواتاب {currentStep}/{totalSteps}",
+  "@aquatapActivationTag": {
+    "placeholders": {
+      "currentStep": {
+        "type": "int"
+      },
+      "totalSteps": {
+        "type": "int"
+      }
+    }
+  },
+  "exploreFavoriteNoInternetConnectionOnRemove": "لم نتمكن من إزالة '{name}' من قائمتك لأنك غير متصل بالإنترنت. تحقق من اتصالك وحاول مرة أخرى.",
+  "exploreFavoriteRemovedSuccess": " تم إزالة {name} من خياراتكم المفضلة",
+  "exploreFavoriteAddError": "عذرًا، لم يتم إضافة {name} إلى قائمة المفضلة. يُرجى المحاولة مرة أخرى.",
+  "exploreFavoriteRemoveError": "غير قادر على إزالة {name} من مفضلاتك.",
+  "exploreFavoriteNoInternetConnectionOnAdd": "لم نتمكن من إضافة '{name}' إلى مفضلاتك لأنك غير متصل بالإنترنت. تحقق من اتصالك وحاول مرة أخرى.",
+  "exploreFavoriteAddedSuccess": "تم إضافة {name} إلى خياراتكم المفضلة",
+  "homeTicketsBought": "استفيدوا من زيارتكم إلى أقصى حد!",
+  "homeCard4Title": "اكتشفوا",
+  "homeCard4Description": "ألعاب محطمة للأرقام القياسية",
+  "homeButtonCardTitleActiveCart": "أكملوا عملية الحجز",
+  "homeButtonCardTitleTicketsBought": "خططوا لزيارتكم",
+  "homeButtonCardTitleWithoutTickets": "احجزوا تذاكركم",
+  "homeButtonCardSubtitleActiveCart": "لا تفوّتوا الفرصة! أكملوا عملية الشراء.",
+  "homeButtonCardSubtitleTicketsBought": "استعدوا ليوم كامل من المتعة",
+  "homeButtonCardSubtitleWithoutTickets": "اكتشفوا 22 لعبة وتجربة!",
+  "homeAreYouSureCloseCartTitle": "هل أنتم متأكدون أنكم تريدون إغلاق السلة؟",
+  "homeAreYouSureCloseCartDescription": "في حال الإغلاق، ستُحذف جميع العناصر في السلة، وستحتاجون إلى بدء حجز جديد للحصول على تذاكركم.",
+  "homeYesClearMyCart": "نعم، إفراغ السلة",
+  "homeNoProceedToCheckout": "لا، المتابعة إلى الدفع",
+  "homeCTATicketsBought": "ابدؤوا التخطيط",
+  "homeCTAWithoutTickets": "احجزوا الآن",
+  "partnersOfficialPremierPartnersTitle": "الشركاء الرسميون الرئيسيون",
+  "partnersOfficialPartnersTitle": "الشركاء الرسميون",
+  "partnersOfficialProviders": "المزودون الرسميون",
+  "partnersDiscoverTitle": "اكتشف شركائنا",
+  "partnersViewAllCTA": "عرض جميع الشركاء",
+  "viewAllPartners": "عرض جميع الشركاء",
+  "exploreAttractionsListTitle": "اكتشف الحديقة",
+  "exploreRidesSectionTitle": "الألعاب والتجارب",
+  "exploreAllCategories": "جميع الفئات",
+  "exploreMainCategories": "الفئات الرئيسية",
+  "explorePersonalised": "مخصص",
+  "exploreMyVisits": "زياراتي",
+  "exploreMyVisitGuestUserAccessPromptHeaderTitle": "زيارتي",
+  "exploreUserFeature": "خاصية المستخدم",
+  "exploreOther": "أخرى",
+  "exploreNoVisits": "لا زيارات",
+  "exploreMore": "المزيد",
+  "exploreNoWaitTimeSpan": "لا يوجد انتظار",
+  "exploreReadMore": "اقرأ المزيد",
+  "exploreLocationLabel": "الموقع",
+  "exploreRideTypeLabel": "نوع الركوب",
+  "exploreThrillLevelLabel": "مستوى الإثارة",
+  "exploreHeightRequirementLabel": "متطلبات الطول",
+  "exploreAdultCompanionLabel": "رفيق بالغ",
+  "exploreHelpAndSupportMoreQuestionsAnswered": "إجابات على المزيد من الأسئلة",
+  "exploreFeaturesLabel": "الميزات",
+  "exploreRestaurantTypeLabel": "نوع المطعم",
+  "exploreMenuHighlightsLabel": "أبرز ما في القائمة",
+  "exploreDietaryPreferencesLabel": "تفضيلات غذائية",
+  "exploreCuisineTypeLabel": "نوع المأكولات",
+  "exploreStoreTypeLabel": "نوع المتجر",
+  "exploreExclusiveDealsLabel": "عروض حصرية",
+  "exploreFeaturedCollectionsLabel": "المجموعات المميزة",
+  "exploreFiltersReset": "إعادة التعيين",
+  "exploreAdvancedFiltersReset": "إعادة التعيين",
+  "exploreSortButton": "ترتيب ",
+  "exploreExclusiveDealsPlaceholder": "اشترِ 2، واحصل على 1 مجانًا",
+  "exploreShoppingFeaturedCollectionsPlaceholder": "ملابس حصرية، بضائع وتحف",
+  "exploreDietaryPreferencesPlaceholder": "نباتي",
+  "exploreMenuHighlightsPlaceholder1": "وجبات خفيفة",
+  "exploreMenuHighlightsPlaceholder2": "مشروبات",
+  "exploreRidesFilters": "تصفية الألعاب والتجارب",
+  "exploreDiningFilters": "تصفية المطاعم",
+  "exploreShoppingFilters": "تصفية التسوق",
+  "exploreAdvancedFiltersShowResults": "عرض جميع النتائج",
+  "exploreLoading": "جاري التحميل...",
+  "exploreListResultsTitle": "نتائج",
+  "exploreDiningSectionTitle": "المطاعم المختارة",
+  "exploreSearchRecentSearches": "أحدث النتائج",
+  "exploreSearchCleanHistory": "مسح السجل",
+  "exploreNoResults": "لا توجد نتائج",
+  "exploreTrySearchingForSomethingElse": "حاول البحث عن شيء آخر",
+  "exploreSearch": "البحث",
+  "exploreDining": "المطاعم",
+  "exploreEntertainment": "الترفيه",
+  "exploreFacilities": "المرافق",
+  "exploreFavorites": "الخيارات المفضلة",
+  "exploreRidesAndAttractions": "الألعاب والتجارب",
+  "exploreShopping": "التسوق",
+  "privacyPolicyAgreementPrefix": "أوافق على ",
+  "startNavigation": "بدء التنقل",
+  "openGoogleMaps": "الانتقال الى خرائط جوجل",
+  "cardSavedMessage": "تم حفظ بطاقتك بنجاح",
+  "creditCardStoreFailed": "لم نتمكن من حفظ بيانات بطاقتك الائتمانية حاليًا. يُرجى المحاولة مجددًا لحفظ معلومات طريقة الدفع.",
+  "goBackToPaymentMethod": "انتقل إلى طرق الدفع",
+  "addNewCardTitle": "إضافة بطاقة <brandBlue>جديدة</brandBlue>",
+  "cardHolderName": "اسم حامل البطاقة",
+  "bracketedExpiryDate": "تاريخ الانتهاء (شهر/عام)",
+  "bracketedSecurityCode": "رمز الأمان (CVV)",
+  "deleteCardConfirmationTitle": "هل أنتم متأكدون من حذف {cardNumber}؟",
+  "deleteCardConfirmationDesc": "سيؤدي حذف البطاقة إلى إزالتها نهائيًا من حسابكم وإلغاء ربط طريقة الدفع بأي أكواتاب.",
+  "setDefultCardConfirmationTitle": "هل ترغبون في حفظ هذه البطاقة كطريقة الدفع الافتراضية؟",
+  "setDefultCardConfirmationDescription": "طريقة الدفع الافتراضية الحالية هي {cardNumber}",
+  "setDefaultSuccessMessage": "تم حفظ {cardNumber} كطريقة الدفع الافتراضية.",
+  "deleteCatdBtn": "نعم، احذف البطاقة",
+  "yesSetDefaultButton": "نعم، حفظ كطريقة الدفع الافتراضية",
+  "cardDeletedSuccessMessage": "تم حذف بطاقتك بنجاح",
+  "setDefaultSuccessMessage": "تم حفظ {cardNumber} كطريقة الدفع الافتراضية.",
+  "setDefailtFailedMessage": "لم يتم حفظ {cardNumber} كطريقة الدفع الافتراضية. يرجى المحاولة مرة أخرى.",
+  "cardDeletedFailedMessage": "لم يتم حذف بطاقتك الائتمانية. يرجى المحاولة مرة أخرى.",
+  "tryAgain": "حاول مرة أخرى",
+  "errorInternetConnectionMessage": "تعذر الاتصال بالشبكة. يرجى التحقق من خدمة الإنترنت وإعادة المحاولة",
+  "connectionFailed": "تعذر الاتصال",
+  "vpCreatingYourVisitLoading": "نحن نعمل على إنشاء زيارتك، فقط لحظة...",
+  "totalToPay": "الإجمالي المستحق للدفع",
+  "ticketTotal": "إجمالي التذكرة",
+  "subtotal": "إجمالي",
+  "ticketSummary": "ملخص الطلب",
+  "digitalRegistrationCreateAccount": "إنشاء حساب ",
+  "onboardingSecondaryAction": "تسجيل الدخول أو إنشاء حساب",
+  "onboardingStory1Title": "<brandYellow>تخطوا</brandYellow> الطوابير!",
+  "onboardingStory1Description": "احجزوا تذاكركم بسهولة واستمتعوا بعروض حصرية!",
+  "onboardingStory2Title": "<brandCyan>انطلقوا</brandCyan> بثقة داخل المدينة",
+  "onboardingStory2Description": "اكتشفوا المتنزه المائي، خططوا لرحلتكم، واستمتعوا بكل لحظة.",
+  "onboardingStory3Title": "هل تحتاجون إلى <brandSpecialsPurple>مساعدة؟</brandSpecialsPurple>",
+  "onboardingStory3Description": "تواصلوا مع خدمة رفيق المغامرات للحصول على دعم فوري.",
+  "onboardingStory4Title": "استعدوا <brandBlue>للمغامرة!</brandBlue>",
+  "onboardingStory4Description": "عيشوا تجارب جديدة، اصنعوا ذكريات لا تنسى واستمتعوا باستكشاف المتنزه المائي.",
+  "exploreNoSearchResultsTile": "لا توجد نتائج",
+  "exploreNoSearchResultsSubtitle": "حاول البحث عن شيء آخر.",
+  "exploreAttractionsListTitle": "اكتشفوا المتنزه المائي",
+  "exploreRidesSectionTitle": "ألعاب محطمة للأرقام القياسية",
+  "exploreMore": "المزيد",
+  "exploreViewAllRides": "عرض جميع الألعاب والتجارب",
+  "exploreViewAllDining": "عرض جميع المطاعم",
+  "exploreViewAllShopping": "عرض جميع المتاجر",
+  "exploreDiningSectionTitle": "المطاعم المختارة",
+  "exploreStoresSectionTitle": "المتاجر الرائجة",
+  "downloadMapTitle": "يتم تحميل الخريطة ...",
+  "downloadMapSubTitle": "يرجى الانتظار. قد يستغرق التحميل بعض الوقت",
+  "connectionLostAdviceMessage": "يرجى التحقق من الاتصال بالإنترنت للوصول إلى كافة ميزات التطبيق.",
+  "exploreFiltersReset": "إعادة ضبط",
+  "exploreListResultsTitle": "نتيجة",
+  "exploreAdvancedFiltersShowResults": "عرض جميع النتائج",
+  "exploreSortButton": "ترتيب حسب • ",
+  "exploreAdvancedFiltersReset": "إعادة ضبط",
+  "exploreRidesFilters": "فلاتر الألعاب والتجارب",
+  "exploreDiningFilters": "فلاتر المطاعم",
+  "exploreShoppingFilters": "فلاتر التسوق",
+  "filter": "فلتر",
+  "exploreNoAttractionsFoundError": "لم يتم العثور على نتائج",
+  "exploreAllCategories": "جميع الفئات",
+  "exploreMainCategories": "الفئات الرئيسية",
+  "explorePersonalised": "التجارب المخصصة",
+  "exploreOther": "خيارات أخرى",
+  "exploreMyVisits": "زياراتي",
+  "exploreNoTrips": "لا يوجد زيارات",
+  "chipText": "خاصية المستخدم",
+  "exploreFavouritesTitle": "الخيارات المفضلة",
+  "exploreParkMapListViewButton": "عرض القائمة",
+  "exploreShowLess": "أظهر أقل",
+  "exploreReadMore": "اقرأ المزيد",
+  "exploreWaitTimeSpan": "انتظار ",
+  "exploreNoWaitTimeSpan": "لا يوجد انتظار",
+  "exploreSearch": "بحث",
+  "exploreLocationLabel": "الموقع",
+  "exploreRideTypeLabel": "نوع اللعبة",
+  "exploreThrillLevelLabel": "مستوى التشويق",
+  "exploreHeightRequirementLabel": "ضوابط الطول",
+  "exploreWeightRequirementLabel": "ضوابط الوزن",
+  "exploreAdultCompanionLabel": "المرافق البالغ",
+  "exploreFeaturesLabel": "ميزات اللعبة",
+  "exploreRestaurantTypeLabel": "نوع المطعم",
+  "exploreCuisineTypeLabel": "نوع المطبخ",
+  "exploreDietaryPreferencesLabel": "خيارات الطعام",
+  "exploreMenuHighlightsLabel": "أبرز أصناف قائمة الطعام",
+  "exploreStoreTypeLabel": "نوع المتجر",
+  "exploreProductTypeLabel": "نوع المنتج",
+  "exploreExclusiveDealsLabel": "عروض حصرية",
+  "exploreFeaturedCollectionsLabel": "المجموعات المختارة",
+  "exploreAccessibilityInformationText": "معلومات حول إمكانية الوصول",
+  "exploreAdvancedFiltersUpdating": "جار التحميل...",
+  "exploreAdvancedFiltersShowResultsWithCount": "عرض النتائج ({count})",
+  "exploreFastPassLabel": "تذكرة أكوافاست",
+  "exploreExclusiveDealsPlaceholder": "خصم 10% على جميع المنتجات",
+  "exploreShoppingFeaturedCollectionsPlaceholder": "منتجات ذات طابع ربيعي",
+  "exploreDietaryPreferencesPlaceholder": "خيارات نباتية",
+  "exploreMenuHighlightsPlaceholder1": "وجبات خفيفة",
+  "exploreMenuHighlightsPlaceholder2": "مشروبات مثلجة",
+  "exploreGenderPlaceholder": "لِلْجِنْسَيْن",
+  "exploreCommaSeparator": "، ",
+  "bookTicketsTitle": "تذكرة أكوافاست",
+  "fastPassDesc": "احجزوا الآن وتجاوزوا الطوابير!",
+  "fastPassButton": "للحجز",
+  "visitName1": "اسم الزيارة 1",
+  "visitName2": "اسم الزيارة 2",
+  "visitName3": "اسم الزيارة 3",
+  "visitName4": "اسم الزيارة 4",
+  "whoGoingTripProTip": "<bold>نصيحة محترف!</bold> الدخول مجاني للأطفال دون الاربع أعوام، ولكن يرجى تسجيلهم أدناه!",
+  "notificationsViewAll": "عرض الكل",
+  "notificationsUnreadOnly": "الغير مقروءة فقط",
+  "notificationReadAll": "قراءة الكل",
+  "notificationsToday": "اليوم",
+  "notificationsYesterday": "أمس",
+  "notificationsOlder": "أقدم",
+  "emptyNotificationTitle": "لا جديد!",
+  "emptyNotificationSubtitle": "لا توجد إشعارات جديدة!",
+  "b2cConfirmDeleteCartItem": "نعم، احذف",
+  "b2cCancelDeleteCartItem": "إلغاء",
+  "b2cDeleteCartItemCloseTitle": "هل أنتم متأكدون؟",
+  "b2cDeleteCartItemCloseDescription": "حذف هذا الخيار سيزيل أي إضافات مرتبطة بهذه التذكرة.",
+  "aquaTapTitle": "أكواتاب",
+  "b2cAquaTapManualCodeActivationHeader": "أدخل رقم أكواتاب الموجود في الخلف",
+  "visitPlannerUpcomingEvents": "الرحلات القادمة عددها",
+  "visitPlannerOneUpcomingEvent": "الرحلات القادمة عددها",
+  "visitPlannerPastEvents": "الرحلات السابقة",
+  "visitPlannerOnePastEvent": "رحلة سابقة",
+  "guestSelectionInfoToastMessage": "يرجى ملاحظة أن الأطفال بعمر ثلاثة أعوام فأقل لا يحتاجون إلى تذكرة.",
+  "vpExploreMyVisitEmptyTitle": "حان وقت المرح!",
+  "vpExploreMyVisitEmptyDescription": "يمكنكم التخطيط لرحلتكم أو الاختيار من بين الجداول الزمنية الجاهزة أو حفظ خياراتكم في القائمة.",
+  "vpExploreMyVisitEmptyButton": "خطط لزيارتي",
+  "deleteAquaTapTitle": "هل أنتم متأكدون من تعطيل أكواتاب {wearableId}؟",
+  "deleteAquaTapDescription": "ستفقدون وسيلة الدفع والاستفادة من الإضافات والتجارب عبر أكواتاب {wearableId}",
+  "@deleteAquaTapTitle": {
+    "placeholders": {
+      "wearableId": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteAquaTapBtn": "نعم، تعطيل",
+  "successDeleteAquaTapMsg": "تم تعطيل أكواتاب بنجاح.",
+  "errorDeleteAquaTapMsg": "لم يتم تعطيل أكواتاب. يُرجى المحاولة مرة أخرى.",
+  "b2cBookingStepDateTicketsDescription": "قم بتسجيل الدخول إلى حسابك أو الاشتراك في بضع خطوات بسيطة. الأمر سريع وسهل!",
+  "exploreSelectAll": "تحديد الكل",
+  "addPaymentMethod": "إضافة وسيلة دفع",
+  "linkPaymentMethodTitle": "اربطوا وسيلة دفع لمعاملات رقمية دون الحاجة لإستخدام النقود",
+  "selectCardDesc": "اختاروا البطاقة التي تودون استخدامها للمدفوعات عبر أكواتاب.",
+  "ticketDetailsPriceTitle": "السعر الإجمالي (شاملاً ضريبة القيمة المضافة)",
+  "ticketDetailsPriceTitle": "السعر الإجمالي (شاملاً ضريبة القيمة المضافة)",
+  "digitalReactivateInformation1": "يبدو أن رقم الجوال هذا مرتبط بحساب في تطبيق أكواريبيا مدينة القدية وهو قيد الحذف. أعيدوا تفعيل حسابكم الآن واحتفظوا بجميع مميزاته!",
+  "digitalReactivateInformation2": "أعيدوا تفعيل حسابكم للوصول إلى تذاكركم وامتيازاتكم وخياراتكم المفضلة",
+  "digitalReactivateInformation3": "أعيدوا تفعيل حسابكم لاسترجاع معلوماتكم الشخصية مجدداً.",
+  "didUserPrefsQ1Title": "ما هي <brandCyan>المفضلة</brandCyan><brandGreen>الأنشطة </brandGreen>\nلديكم؟",
+  "b2cBookingStepExperienceTitle": "احجزوا تجربة اجعلوا يومكم أكثر روعة!",
+  "b2cBookingStepExperienceDescription": "استمتعوا بوقتكم في المتنزه المائي واجعلوا منه تجربة لا تنسى!",
+  "b2cBookingStepExperienceTag": "اختيار التذكرة",
+  "didUserPrefsQ3_first_time": "هذه الزيارة الأولى",
+  "digitalEditYourPhoneNumber": "حرّر رقم هاتفك",
+  "didUserPrefsQ3_multiple_times_year": "عدة مرات في السنة",
+  "personalPreferencesStepperTagLine": "إعداد الملف الشخصي",
+  "didUserPrefsQ3Title": "ما <brandCyan>زياراتكم</brandCyan><brandGreen>معدل </brandGreen>\nللمتنزهات الترفيهية؟",
+  "pairViaNfcTitle": "ضعوا الجوال فوق أكواتاب لربط الجهازين",
+  "pairViaNfcDescription": "لربط الجهازين، ضعوا أكواتاب المزوّد بتقنية NFC بالقرب من الجزء العلوي في خلف الجوال.",
+  "nfcDisabledBSTitle": "تشغيل NFC",
+  "nfcDisabledBSDescription": "للمتابعة، يجب تفعيل خاصية NFC من إعدادات جهازكم.",
+  "parkPoliciesTitle": "سياسات المتنزه المائي",
+  "homeLiveStreamTitle": "لا تفوتوا هذه اللحظات المباشرة!",
+  "setupPin": "أعدّوا رمز الدخول لحماية معلوماتكم",
+  "confirmPin": "تأكيد الرمز",
+  "enterPinDesc": "أدخلوا الرمز المكوّن من أربعة أرقام لاستخدامه عند الدفع.\nسيُطلب إدخال هذا الرمز لكل معاملة.",
+  "reEnterPinDesc": "أعيدوا إدخال الرمز المكوّن من أربعة أرقام.",
+  "homeLiveStreamTitle": "لا تفوتوا هذه اللحظات المباشرة!",
+  "pinVerificationFailed": "فشل التحقق. نحن نواجه حاليًا صعوبات تقنية. يرجى المحاولة مرة أخرى لاحقًا أو الاتصال بالدعم للحصول على المساعدة.",
+  "pinSuccessTitle": "تم إعداد وسيلة الدفع بنجاح!",
+  "pinSuccessPoint1": "يمكنكم الآن إجراء عمليات الدفع بشكل سريع وسهل في جميع المتاجر والمطاعم!",
+  "pinSuccessPoint2": "استخدموا أكواتاب للدخول إلى المتنزه المائي والاستفادة من جميع الإضافات والمزايا!",
+  "pinSuccessPoint3": "بإمكانكم تعطيل أكواتاب في أي وقت عن طريق زيارة صفحة ملفي الشخصي.",
+  "homeParkOpenStatus": "مفتوح",
+  "homeParkClosingStatus": "على وشك الإغلاق",
+  "homeParkClosedStatus": "مغلق",
+  "homeDiscoverMapTitle": "اكتشفوا المتنزه المائي",
+  "exploreWeAreOpen": "تم الافتتاح!",
+  "exploreLetTheFunBegin": "هيا بنا لمرح بلا حدود!",
+  "exploreOpeningDay": "الحديقة تفتح",
+  "exploreDays": "يوم",
+  "exploreHours": "ساعة",
+  "exploreMin": "دقيقة",
+  "exploreSec": "ثانية",
+  "b2cRemoveAddonsCartDescription": "يمكنك إزالة أي إضافات مرتبطة بهذه التذكرة، أو حذف التذكرة من السلة.",
+  "goToDeviceSettigsCta": "الانتقال إلى إعدادات الجهاز",
+  "exploreUrgent": "عاجل",
+  "notificationSilence": "تحديثات الصمت لمدة ساعة واحدة",
+  "exploreGetInstructions": "احصل على التعليمات",
+  "informationCardCompletedFinish": "انهاء",
+  "informationCardCompletedRouteSubTitle": "لقد وصلتم إلى وجهتكم!",
+  "informationCardCompletedRouteTitle": "ها قد وصلت الى {destination}!",
+  "routeInformationCardDistance": "م",
+  "routeInformationCardDone": "إنهاء",
+  "routeInformationCardMinAway": "دقائق",
+  "routeInformationCardMinsAway": "دقائق",
+  "oopsExclamation": "عذرًا",
+  "exploreDistanceKm": "كم",
+  "exploreDistanceMeter": "م",
+  "wearablePaymentMethodTitle": "طرق الدفع",
+  "exploreThePark": "استكشف الحديقة",
+  "welcomeTo": "مرحبًا بك في {name}",
+  "enjoyYourVisit": "استمتع بزيارتك!",
+  "discoverAllTheAttractions": "اكتشف جميع المعالم التي نقدمها.",
+  "commonAdd": "إضافة",
+  "linkCardDesc": "يمكنك اختيار طريقة الدفع هذه مرة أخرى إذا أردت",
+  "successDeletePaymentMethod": "تم حذف وسيلة الدفع الخاصة بك بنجاح",
+  "errorDeletePaymentMethod": "لم يتم حذف وسيلة الدفع الخاصة بك. يرجى المحاولة مرة أخرى.",
+  "aboutYouTag": "معلومات المستخدم",
+  "aboutYouDesc": "يرجى إضافة خياراتكم المفضلة لتخصيص التوصيات وتحسين تجربتكم داخل التطبيق.",
+  "personalPreferences": "التفضيلات الشخصية",
+  "pinErrorInvalidCode": "رمز غير صحيح. يُرجى المحاولة مرة أخرى.",
+  "b2cByGabrielMedinaTag": "ﻣن Gabriel Medina",
+  "settingsAppPermissionAlertDescription": "إبقوا على اطلاع دائم مع التحديثات الفورية للمتنزه المائي وأحوال الطقس وإيصالات الشراء لتحسين تجربة زيارتكم!",
+  "upcomingOnTag": "قريبًا بتاريخ",
+  "activitiesErrorRetryButton": "إعادة المحاولة",
+  "digitalExploreFavouritesTitle": "خياراتكم المفضلة",
+  "digitalExploreFavouritesSubheadline": "احفظوا خياراتكم المفضلة",
+  "digitalExploreFavouritesHeadline": "<brandSpecialsPurple>بتجربتكم</brandSpecialsPurple> <brandCyan>استمتعوا</brandCyan> في المتنزه!",
+  "digitalExploreFavouritesDescription": "يمكنكم الوصول بسرعة إلى الألعاب والمعالم والفعاليات التي ترغبون في زيارتها!",
+  "digitalExploreFavouritesDescription": "اوافق على استخدام عنوان البريد الإلكتروني لجميع المراسلات الخاصة بحاملي التذكرة السنوية من أكواريبيا مدينة القدية .",
+  "junoonDropChipLabel": "محطمة للأرقام القياسية",
+  "junoonDropTitle": "جنون دروب",
+  "junoonDropDescription": "أطول أفعوانية مائية في العالم!",
+  "junoonDropTags": "مناسبة للعائلات",
+  "colossalCanyonChipLabel": "مغامرات",
+  "colossalCanyonTitle": "الوادي الرهيب",
+  "colossalCanyonDescription": "استعد لأقصى مغامرة لمحبي الإثارة في المنطقة!",
+  "colossalCanyonTags": "تجربة",
+  "surftopiaChipLabel": "سيرفتوبيا",
+  "surftopiaTitle": "سيرفتوبيا",
+  "surftopiaDescription": "أول مسبح لركوب الأمواج في السعودية",
+  "surftopiaTags": "تجربة",
+  "aquaticarChipLabel": "أكواتيكار",
+  "aquaticarTitle": "أكواتيكار",
+  "aquaticarDescription": "أول مغامرة فريدة من نوعها تحت الماء تأخذكم في رحلة غامرة لا تنسى!",
+  "aquaticarTags": "تجربة",
+  "exploreAll": "الكل",
+  "annualEmailAddressCommunicationText": "اوافق على استخدام عنوان البريد الإلكتروني لجميع المراسلات الخاصة بحاملي التذكرة السنوية من أكواريبيا مدينة القدية .",
+  "pricePerPerson": "للشخص الواحد",
+  "pluralAnnualPass": "تذاكر سنوية"
+}

@@ -9,8 +9,6 @@
 .buildlog/
 .history
 .svn/
-test/full_coverage_test.dart
-
 
 # IntelliJ related
 *.iml
@@ -63,13 +61,14 @@ unlinked_spec.ds
 
 # Android related
 **/android/**/gradle-wrapper.jar
-**/android/.gradle
+.gradle/
 **/android/captures/
 **/android/gradlew
 **/android/gradlew.bat
 **/android/local.properties
 **/android/**/GeneratedPluginRegistrant.java
-**/android/app/.cxx/
+**/android/key.properties
+*.jks
 
 # iOS/XCode related
 **/ios/**/*.mode1v3
@@ -88,12 +87,17 @@ unlinked_spec.ds
 **/ios/**/profile
 **/ios/**/xcuserdata
 **/ios/.generated/
+**/ios/Flutter/.last_build_id
 **/ios/Flutter/App.framework
+**/ios/Podfile
 **/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
 **/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/ephemeral
 **/ios/Flutter/app.flx
 **/ios/Flutter/app.zip
 **/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
@@ -127,7 +131,6 @@ app.*.symbols
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
-!.vscode/launch.json
 !.vscode/settings.json
 
 # Flutter specific
@@ -166,22 +169,3 @@ linux/flutter/ephemeral/
 # Dependency files
 pubspec.lock
 package-lock.json
-pubspec_overrides.yaml
-
-# FVM Version Cache
-.fvm/
-
-# Secrets
-Secrets.xcconfig
-
-# Park map tiles
-assets/tiles/
-
-# Firebase
-google-services.json
-GoogleService-Info.plist
-firebase_options_**.dart
-firebase.json
-
-# Guardsquare
-.guardsquare/
