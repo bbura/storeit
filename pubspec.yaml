@@ -27,7 +27,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   dio: ^5.7.0
-  firebase_core: ^4.2.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
@@ -36,7 +35,6 @@ dependencies:
   flutter_svg: ^2.2.1
   freezed: ^3.2.3
   freezed_annotation: ^3.1.0
-  geolocator: ^14.0.1
   get_it: ^9.0.5
   injectable: ^2.5.0
   jwt_decode: ^0.3.1
@@ -86,7 +84,7 @@ flutter_gen:
 flutter:
   assets:
     - assets/icons/Bold/
-    - assets/icons/Bold/Arrows
+    - assets/icons/Bold/Arrows/
     - assets/icons/Bold/ArrowsAction/
     - assets/icons/Bold/Astronomy/
     - assets/icons/Bold/BuildingInfrastructure/
@@ -126,7 +124,7 @@ flutter:
 
 # Outline¬
     - assets/icons/Outline/
-    - assets/icons/Outline/Arrows
+    - assets/icons/Outline/Arrows/
     - assets/icons/Outline/ArrowsAction/
     - assets/icons/Outline/Astronomy/
     - assets/icons/Outline/BuildingInfrastructure/

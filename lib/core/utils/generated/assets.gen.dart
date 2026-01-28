@@ -281,6 +281,10 @@ class $AssetsIconsOutlineGen {
   $AssetsIconsOutlineSportsGen get sports =>
       const $AssetsIconsOutlineSportsGen();
 
+  /// Directory path: assets/icons/Outline/TextFormatting
+  $AssetsIconsOutlineTextFormattingGen get textFormatting =>
+      const $AssetsIconsOutlineTextFormattingGen();
+
   /// Directory path: assets/icons/Outline/Time
   $AssetsIconsOutlineTimeGen get time => const $AssetsIconsOutlineTimeGen();
 
@@ -12719,6 +12723,198 @@ class $AssetsIconsOutlineSportsGen {
     walking,
     waterSun,
     water,
+  ];
+}
+
+class $AssetsIconsOutlineTextFormattingGen {
+  const $AssetsIconsOutlineTextFormattingGen();
+
+  /// File path: assets/icons/Outline/TextFormatting/Backspace.svg
+  SvgGenImage get backspace =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Backspace.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Eraser Circle.svg
+  SvgGenImage get eraserCircle => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Eraser Circle.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Eraser Square.svg
+  SvgGenImage get eraserSquare => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Eraser Square.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Eraser.svg
+  SvgGenImage get eraser =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Eraser.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Broken Minimalistic.svg
+  SvgGenImage get linkBrokenMinimalistic => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Link Broken Minimalistic.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Broken.svg
+  SvgGenImage get linkBroken =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Link Broken.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Circle.svg
+  SvgGenImage get linkCircle =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Link Circle.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Minimalistic 2.svg
+  SvgGenImage get linkMinimalistic2 => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Link Minimalistic 2.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Minimalistic.svg
+  SvgGenImage get linkMinimalistic => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Link Minimalistic.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Round Angle.svg
+  SvgGenImage get linkRoundAngle => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Link Round Angle.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Round.svg
+  SvgGenImage get linkRound =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Link Round.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Link Square.svg
+  SvgGenImage get linkSquare =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Link Square.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Link.svg
+  SvgGenImage get link =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Link.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Paragraph Spacing.svg
+  SvgGenImage get paragraphSpacing => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Paragraph Spacing.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Bold Circle.svg
+  SvgGenImage get textBoldCircle => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Bold Circle.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Bold Square.svg
+  SvgGenImage get textBoldSquare => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Bold Square.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Bold.svg
+  SvgGenImage get textBold =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text Bold.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Circle.svg
+  SvgGenImage get textCircle =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text Circle.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Cross Circle.svg
+  SvgGenImage get textCrossCircle => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Cross Circle.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Cross Square.svg
+  SvgGenImage get textCrossSquare => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Cross Square.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Cross.svg
+  SvgGenImage get textCross =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text Cross.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Field Focus.svg
+  SvgGenImage get textFieldFocus => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Field Focus.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Field.svg
+  SvgGenImage get textField =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text Field.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Italic Circle.svg
+  SvgGenImage get textItalicCircle => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Italic Circle.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Italic Square.svg
+  SvgGenImage get textItalicSquare => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Italic Square.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Italic.svg
+  SvgGenImage get textItalic =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text Italic.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Selection.svg
+  SvgGenImage get textSelection => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Selection.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Square 2.svg
+  SvgGenImage get textSquare2 => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Square 2.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Square.svg
+  SvgGenImage get textSquare =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text Square.svg');
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Underline Circle.svg
+  SvgGenImage get textUnderlineCircle => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Underline Circle.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Underline Cross.svg
+  SvgGenImage get textUnderlineCross => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Underline Cross.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text Underline.svg
+  SvgGenImage get textUnderline => const SvgGenImage(
+    'assets/icons/Outline/TextFormatting/Text Underline.svg',
+  );
+
+  /// File path: assets/icons/Outline/TextFormatting/Text.svg
+  SvgGenImage get text =>
+      const SvgGenImage('assets/icons/Outline/TextFormatting/Text.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+    backspace,
+    eraserCircle,
+    eraserSquare,
+    eraser,
+    linkBrokenMinimalistic,
+    linkBroken,
+    linkCircle,
+    linkMinimalistic2,
+    linkMinimalistic,
+    linkRoundAngle,
+    linkRound,
+    linkSquare,
+    link,
+    paragraphSpacing,
+    textBoldCircle,
+    textBoldSquare,
+    textBold,
+    textCircle,
+    textCrossCircle,
+    textCrossSquare,
+    textCross,
+    textFieldFocus,
+    textField,
+    textItalicCircle,
+    textItalicSquare,
+    textItalic,
+    textSelection,
+    textSquare2,
+    textSquare,
+    textUnderlineCircle,
+    textUnderlineCross,
+    textUnderline,
+    text,
   ];
 }
 
