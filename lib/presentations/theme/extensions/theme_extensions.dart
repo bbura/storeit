@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:storeit/presentations/theme/store_color_palette.dart';
-import 'package:storeit/presentations/theme/store_icon_tokens.dart';
-import 'package:storeit/presentations/theme/store_layout_tokens.dart';
-import 'package:storeit/presentations/theme/store_text_tokens.dart';
-import 'package:storeit/presentations/theme/store_theme.dart';
+import 'package:storeit/presentations/theme/design/store_color_palette.dart';
+import 'package:storeit/presentations/theme/design/store_size_tokens.dart';
 import 'package:storeit/presentations/theme/store_theme_manager.dart';
+import 'package:storeit/presentations/theme/store_theme_schema.dart';
 
 extension StoreThemeContext on BuildContext {
   // Determine if dark mode
   bool get _isDark => Theme.of(this).brightness == Brightness.dark;
 
   // Get tokens directly from ThemePresets
-  StoreTheme get stTheme =>
+  StoreThemeSchema get stTheme =>
       _isDark ? StoreThemeManager.dark : StoreThemeManager.light;
 
   AppColorPalette get stColorPalette => stTheme.colors;
 
-  AppTextTokens get stText => stTheme.text;
-
-  AppIconTokens get stIcons => stTheme.icons;
-
-  AppLayoutTokens get stSizes => stTheme.layout;
+  /// Shortcut to all sizing tokens (text, icons, layout)
+  StoreSizeTokens get stSizes => stTheme.sizes;
 }
