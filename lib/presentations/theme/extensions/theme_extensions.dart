@@ -6,11 +6,11 @@ import 'package:storeit/presentations/theme/store_theme_schema.dart';
 
 extension StoreThemeContext on BuildContext {
   // Determine if dark mode
-  bool get _isDark => Theme.of(this).brightness == Brightness.dark;
+  bool get isDark => Theme.of(this).brightness == Brightness.dark;
 
   // Get tokens directly from ThemePresets
   StoreThemeSchema get stTheme =>
-      _isDark ? StoreThemeManager.dark : StoreThemeManager.light;
+      isDark ? StoreThemeManager.dark : StoreThemeManager.light;
 
   AppColorPalette get stColorPalette => stTheme.colors;
 
