@@ -1,125 +1,239 @@
 import 'package:flutter/material.dart';
+import 'package:storeit/presentations/theme/extensions/theme_extensions.dart';
+import 'package:storeit/presentations/theme/store_text_tokens.dart';
+import 'package:storeit/presentations/theme/theme_engine.dart';
+import 'package:storeit/presentations/theme/themes.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isDarkMode = false;
+
+  void _toggleTheme() => setState(() => _isDarkMode = !_isDarkMode);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      debugShowCheckedModeBanner: false,
+      theme: ThemeEngine.build(StoreTheme.light),
+      darkTheme: ThemeEngine.build(StoreTheme.dark, dark: true),
+      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Theme Tester',
+            style: context.stText.titleLg.copyWith(
+              color: context.stColorPalette.text[90],
+            ),
+          ),
+          backgroundColor: context.stColorPalette.primary[50],
+          actions: [
+            IconButton(
+              icon: Icon(
+                _isDarkMode ? Icons.brightness_2 : Icons.wb_sunny,
+                color: context.stColorPalette.icon[60],
+                size: context.stIcons.sizeMd,
+              ),
+              onPressed: _toggleTheme,
+              tooltip: 'Toggle Theme',
+            ),
+          ],
+        ),
+        body: const TestThemeScreen(),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+class TestThemeScreen extends StatelessWidget {
+  const TestThemeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
+    final colors = context.stColorPalette;
+    final text = context.stText;
+    final layout = context.stSizes;
+    final icons = context.stIcons;
+
+    return Padding(
+      padding: EdgeInsets.all(layout.spaceLg),
+      child: SingleChildScrollView(
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Primary Colors:',
+              style: text.headlineMd.copyWith(color: colors.primary[70]),
+            ),
+            SizedBox(height: layout.spaceSm),
+            Wrap(
+              spacing: layout.spaceSm,
+              children: List.generate(20, (index) {
+                final shade = (index + 1) * 5;
+                return Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: colors.primary[shade],
+                    borderRadius: BorderRadius.circular(layout.radiusSm),
+                    border: Border.all(color: colors.border[40]),
+                  ),
+                  alignment: Alignment.center,
+                  child: Text(
+                    '$shade',
+                    style: text.labelSm.copyWith(color: colors.text[10]),
+                  ),
+                );
+              }),
+            ),
+
+            SizedBox(height: layout.spaceLg),
+            Text(
+              'Typography Samples:',
+              style: text.headlineMd.copyWith(color: colors.primary[70]),
+            ),
+            SizedBox(height: layout.spaceSm),
+
+            Text(
+              'Display Large',
+              style: text.displayLg.copyWith(color: colors.text[90]),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              'Display Medium',
+              style: text.displayMd.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Display Small',
+              style: text.displaySm.copyWith(color: colors.text[90]),
+            ),
+            SizedBox(height: layout.spaceSm),
+
+            Text(
+              'Headline Large',
+              style: text.headlineLg.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Headline Medium',
+              style: text.headlineMd.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Headline Small',
+              style: text.headlineSm.copyWith(color: colors.text[90]),
+            ),
+            SizedBox(height: layout.spaceSm),
+
+            Text(
+              'Title Large',
+              style: text.titleLg.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Title Medium',
+              style: text.titleMd.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Title Small',
+              style: text.titleSm.copyWith(color: colors.text[90]),
+            ),
+            SizedBox(height: layout.spaceSm),
+
+            Text(
+              'Body Large',
+              style: text.bodyLg.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Body Medium',
+              style: text.bodyMd.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Body Small',
+              style: text.bodySm.copyWith(color: colors.text[90]),
+            ),
+            SizedBox(height: layout.spaceSm),
+
+            Text(
+              'Label Large',
+              style: text.labelLg.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Label Medium',
+              style: text.labelMd.copyWith(color: colors.text[90]),
+            ),
+            Text(
+              'Label Small',
+              style: text.labelSm.copyWith(color: colors.text[90]),
+            ),
+
+            SizedBox(height: layout.spaceLg),
+            Text(
+              'Radius Sizes:',
+              style: text.headlineMd.copyWith(color: colors.primary[70]),
+            ),
+            SizedBox(height: layout.spaceSm),
+            Wrap(
+              spacing: layout.spaceSm,
+              children: [
+                _radiusBox(layout.radiusXs, 'xs', colors.primary[60], text),
+                _radiusBox(layout.radiusSm, 'sm', colors.primary[60], text),
+                _radiusBox(layout.radiusMd, 'md', colors.primary[60], text),
+                _radiusBox(layout.radiusLg, 'lg', colors.primary[60], text),
+                _radiusBox(layout.radiusXl, 'xl', colors.primary[60], text),
+                _radiusBox(layout.radius2Xl, '2xl', colors.primary[60], text),
+                _radiusBox(
+                  layout.radiusFull,
+                  'full',
+                  colors.primary[60],
+                  text,
+                ),
+              ],
+            ),
+
+            SizedBox(height: layout.spaceLg),
+            Text(
+              'Icon Sizes:',
+              style: text.headlineMd.copyWith(color: colors.primary[70]),
+            ),
+            SizedBox(height: layout.spaceSm),
+            Row(
+              children: [
+                Icon(Icons.star, size: icons.sizeSm, color: colors.accent[60]),
+                SizedBox(width: layout.spaceMd),
+                Icon(Icons.star, size: icons.sizeMd, color: colors.accent[60]),
+                SizedBox(width: layout.spaceMd),
+                Icon(Icons.star, size: icons.sizeLg, color: colors.accent[60]),
+                SizedBox(width: layout.spaceMd),
+                Icon(Icons.star, size: icons.sizeXl, color: colors.accent[60]),
+              ],
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+
+  Widget _radiusBox(
+    double radius,
+    String label,
+    Color color,
+    AppTextTokens text,
+  ) {
+    return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(radius),
+      ),
+      alignment: Alignment.center,
+      child: Text(label, style: text.labelLg.copyWith(color: Colors.white)),
     );
   }
 }

@@ -24,6 +24,7 @@ environment:
 
 dependencies:
   adaptive_dialog: ^2.4.1
+  collection: ^1.18.0
   cupertino_icons: ^1.0.6
   dartz: ^0.10.1
   dio: ^5.7.0
@@ -44,7 +45,6 @@ dependencies:
   package_info_plus: ^8.3.0
   pretty_dio_logger: ^1.4.0
   retrofit: 4.9.1
-  collection: ^1.18.0
 
 dev_dependencies:
   analyzer: ^7.7.1
@@ -62,6 +62,7 @@ dev_dependencies:
   lottie: ^3.3.1
   melos: ^7.2.0
   mocktail: ^1.0.4
+  provider: ^6.0.5
   retrofit_generator: ^10.0.6
 
   # The "flutter_lints" package below contains a set of recommended lints to
