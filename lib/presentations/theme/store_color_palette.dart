@@ -40,7 +40,7 @@ class AppColorPalette {
 }
 
 class ColorScale {
-  const ColorScale(this.shades);
+  const ColorScale(this.shades, this.base);
 
   factory ColorScale.fromBase(Color base) {
     final hsl = HSLColor.fromColor(base);
@@ -50,10 +50,12 @@ class ColorScale {
       final lightness = (1 - (i / 100)).clamp(0.05, 0.95);
       result[i] = hsl.withLightness(lightness).toColor();
     }
-    return ColorScale(result);
+
+    return ColorScale(result, base);
   }
 
   final Map<int, Color> shades;
+  final Color base;
 
-  Color operator [](int value) => shades[value]!;
+  Color operator [](int value) => shades[value] ?? base;
 }
