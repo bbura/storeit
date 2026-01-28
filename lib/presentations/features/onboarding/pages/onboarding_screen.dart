@@ -12,7 +12,6 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _controller = PageController();
   int _currentPage = 0;
 
   late final List<_OnboardingItem> _items;
@@ -51,6 +50,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ];
   }
 
+  void _goToNextPage() {
+    if (_currentPage < _items.length - 1) {
+      setState(() => _currentPage += 1);
+    } else {
+      // TODO: Navigate to auth / home
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final colors = context.stColorPalette;
@@ -81,14 +88,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             SizedBox(height: layout.spaceLg),
 
-            /// Carousel
+            /// Animated Onboarding Card (Full-screen swipe)
             Expanded(
-              child: PageView.builder(
-                controller: _controller,
-                itemCount: _items.length,
-                physics: const NeverScrollableScrollPhysics(), // disables swipe
-                onPageChanged: (index) => setState(() => _currentPage = index),
-                itemBuilder: (_, index) => _OnboardingCard(item: _items[index]),
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 400),
+                transitionBuilder: (child, animation) {
+                  final inFromRight = Tween<Offset>(
+                    begin: const Offset(1.0, 0.0),
+                    end: Offset.zero,
+                  ).animate(animation);
+
+                  return SlideTransition(position: inFromRight, child: child);
+                },
+                child: _OnboardingCard(
+                  key: ValueKey(_currentPage), // important for AnimatedSwitcher
+                  item: _items[_currentPage],
+                ),
               ),
             ),
 
@@ -128,21 +143,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       borderRadius: BorderRadius.circular(layout.radiusFull),
                     ),
                   ),
-                  onPressed: () async {
-                    if (_currentPage < _items.length - 1) {
-                      await _controller.nextPage(
-                        duration: const Duration(milliseconds: 350),
-                        curve: Curves.easeOut,
-                      );
-                    } else {
-                      // TODO: Navigate to auth / home
-                    }
-                  },
+                  onPressed: _goToNextPage,
                   child: Text(
                     _items[_currentPage].buttonText,
-                    style: text.labelLg.copyWith(
-                      color: context.stColorPalette.text.inverse,
-                    ),
+                    style: text.labelLg.copyWith(color: colors.text.inverse),
                   ),
                 ),
               ),
@@ -157,9 +161,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 }
 
 class _OnboardingCard extends StatelessWidget {
-  final _OnboardingItem item;
+  const _OnboardingCard({super.key, required this.item});
 
-  const _OnboardingCard({required this.item});
+  final _OnboardingItem item;
 
   @override
   Widget build(BuildContext context) {
@@ -208,15 +212,15 @@ class _OnboardingCard extends StatelessWidget {
 }
 
 class _OnboardingItem {
-  final SvgPicture image;
-  final String title;
-  final String subtitle;
-  final String buttonText;
-
   const _OnboardingItem({
     required this.image,
     required this.title,
     required this.subtitle,
     required this.buttonText,
   });
+
+  final SvgPicture image;
+  final String title;
+  final String subtitle;
+  final String buttonText;
 }
