@@ -3,8 +3,8 @@ import 'package:storeit/presentations/theme/store_icon_tokens.dart';
 import 'package:storeit/presentations/theme/store_layout_tokens.dart';
 import 'package:storeit/presentations/theme/store_text_tokens.dart';
 
-class AppThemeTokens {
-  const AppThemeTokens({
+class StoreTheme {
+  const StoreTheme({
     required this.colors,
     required this.text,
     required this.icons,

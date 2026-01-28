@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:storeit/presentations/theme/extensions/theme_extensions.dart';
 import 'package:storeit/presentations/theme/store_text_tokens.dart';
-import 'package:storeit/presentations/theme/theme_engine.dart';
-import 'package:storeit/presentations/theme/themes.dart';
+import 'package:storeit/presentations/theme/store_theme_manager.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +23,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeEngine.build(StoreTheme.light),
-      darkTheme: ThemeEngine.build(StoreTheme.dark, dark: true),
+      theme: StoreThemeManager.build(StoreThemeManager.light),
+      darkTheme: StoreThemeManager.build(StoreThemeManager.dark, dark: true),
       themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,
       home: Scaffold(
         appBar: AppBar(
@@ -187,12 +186,7 @@ class TestThemeScreen extends StatelessWidget {
                 _radiusBox(layout.radiusLg, 'lg', colors.primary[60], text),
                 _radiusBox(layout.radiusXl, 'xl', colors.primary[60], text),
                 _radiusBox(layout.radius2Xl, '2xl', colors.primary[60], text),
-                _radiusBox(
-                  layout.radiusFull,
-                  'full',
-                  colors.primary[60],
-                  text,
-                ),
+                _radiusBox(layout.radiusFull, 'full', colors.primary[60], text),
               ],
             ),
 
