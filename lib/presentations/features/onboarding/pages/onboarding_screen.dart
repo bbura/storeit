@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
@@ -11,10 +13,51 @@ class OnboardingScreen extends StatefulWidget {
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class _OnboardingScreenState extends State<OnboardingScreen>
+    with SingleTickerProviderStateMixin {
   int _currentPage = 0;
-
   late final List<_OnboardingItem> _items;
+
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  bool _isAnimating = false;
+
+  final List<double> _randomRotations = [];
+  final List<Offset> _randomExitDirections = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    final random = Random();
+
+    // Random rotations for cards underneath the top card
+    _randomRotations.addAll(List.generate(
+      10,
+          (_) => (random.nextDouble() - 0.5) * 0.2, // -0.1 to +0.1 radians
+    ));
+
+    // Random exit directions for top card
+    _randomExitDirections.addAll(List.generate(
+      10,
+          (_) => Offset(
+        (random.nextDouble() - 0.5) * 2, // Horizontal direction multiplier
+        -0.5 - random.nextDouble() * 0.5, // Vertical direction upwards
+      ),
+    ));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   void didChangeDependencies() {
@@ -50,12 +93,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     ];
   }
 
-  void _goToNextPage() {
-    if (_currentPage < _items.length - 1) {
-      setState(() => _currentPage += 1);
-    } else {
-      // TODO: Navigate to auth / home
-    }
+  void _goToNextPage() async {
+    if (_currentPage >= _items.length - 1 || _isAnimating) return;
+
+    _isAnimating = true;
+
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+
+    await _controller.forward(from: 0);
+
+    setState(() {
+      _currentPage += 1;
+    });
+
+    _isAnimating = false;
   }
 
   @override
@@ -63,6 +116,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     final colors = context.stColorPalette;
     final text = context.stSizes.text;
     final layout = context.stSizes.layout;
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: colors.background.base,
@@ -88,21 +144,59 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
             SizedBox(height: layout.spaceLg),
 
-            /// Animated Onboarding Card (Full-screen swipe)
+            /// Stacked/Fanned Cards
             Expanded(
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 400),
-                transitionBuilder: (child, animation) {
-                  final inFromRight = Tween<Offset>(
-                    begin: const Offset(1.0, 0.0),
-                    end: Offset.zero,
-                  ).animate(animation);
+              child: Center(
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  children: List.generate(_items.length, (index) {
+                    if (index < _currentPage) return const SizedBox.shrink();
 
-                  return SlideTransition(position: inFromRight, child: child);
-                },
-                child: _OnboardingCard(
-                  key: ValueKey(_currentPage), // important for AnimatedSwitcher
-                  item: _items[_currentPage],
+                    final isTop = index == _currentPage;
+                    final stackIndex = index - _currentPage;
+
+                    double offsetY = stackIndex * 20.0;
+                    double offsetX = stackIndex * 10.0;
+                    double scale = 1 - stackIndex * 0.05;
+                    double rotation = isTop
+                        ? 0
+                        : _randomRotations[index % _randomRotations.length];
+
+                    return AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, child) {
+                        double animatedOffsetX = offsetX;
+                        double animatedOffsetY = offsetY;
+                        double animatedScale = scale;
+                        double animatedRotation = rotation;
+
+                        if (isTop && _isAnimating) {
+                          // Random exit direction multiplied by screen size
+                          final direction = _randomExitDirections[_currentPage %
+                              _randomExitDirections.length];
+                          animatedOffsetX =
+                              offsetX + direction.dx * screenWidth * _animation.value;
+                          animatedOffsetY =
+                              offsetY + direction.dy * screenHeight * _animation.value;
+                        }
+
+                        return Transform.translate(
+                          offset: Offset(animatedOffsetX, animatedOffsetY),
+                          child: Transform.rotate(
+                            angle: animatedRotation,
+                            child: Transform.scale(
+                              scale: animatedScale,
+                              child: child,
+                            ),
+                          ),
+                        );
+                      },
+                      child: _OnboardingCard(
+                        key: ValueKey(index),
+                        item: _items[index],
+                      ),
+                    );
+                  }).reversed.toList(),
                 ),
               ),
             ),
