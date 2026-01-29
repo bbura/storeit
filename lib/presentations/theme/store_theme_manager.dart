@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storeit/presentations/theme/design/store_color_palette.dart';
+import 'package:storeit/presentations/theme/design/store_gradients.dart';
 import 'package:storeit/presentations/theme/design/store_icon_tokens.dart';
 import 'package:storeit/presentations/theme/design/store_layout_tokens.dart';
 import 'package:storeit/presentations/theme/design/store_size_tokens.dart';
@@ -378,6 +379,19 @@ class StoreThemeManager {
         sizeXl: 96,
       ),
     ),
+    gradients: StoreGradients(
+      splashBackground: RadialGradient(
+        center: Alignment(0, -0.2),
+        radius: 1.2,
+        colors: [
+          Color(0xFFEAF5D8),
+          Color(0xFFCFE6B8),
+          Color(0xFFA7C9A4),
+          Color(0xFF7FAF94),
+        ],
+        stops: [0.0, 0.4, 0.7, 1.0],
+      ),
+    ),
   );
 
   static const dark = StoreThemeSchema(
@@ -624,6 +638,19 @@ class StoreThemeManager {
         sizeMd: 48,
         sizeLg: 64,
         sizeXl: 96,
+      ),
+    ),
+    gradients: StoreGradients(
+      splashBackground: RadialGradient(
+        center: Alignment(0, -0.2),
+        radius: 1.2,
+        colors: [
+          Color(0xFF1F2D24), // dark center glow (green-tinted charcoal)
+          Color(0xFF1A3A2E), // deep muted green
+          Color(0xFF145244), // rich emerald-teal
+          Color(0xFF0E3A32), //
+        ],
+        stops: [0.0, 0.4, 0.7, 1.0],
       ),
     ),
   );
