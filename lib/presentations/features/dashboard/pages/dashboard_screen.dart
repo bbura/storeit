@@ -93,7 +93,7 @@ class BusinessOwner {
 }
 
 /// =======================================================
-/// OWNER SELECTOR
+/// DASHBOARD
 /// =======================================================
 
 class DashboardScreen extends StatelessWidget {
@@ -159,7 +159,7 @@ class LocationPage extends StatelessWidget {
 }
 
 /// =======================================================
-/// STORAGE MAP (GOOGLE MAPS STYLE)
+/// STORAGE MAP (GOOGLE MAPS BEHAVIOR)
 /// =======================================================
 
 class StorageMapPage extends StatefulWidget {
@@ -176,17 +176,51 @@ class _StorageMapPageState extends State<StorageMapPage> {
   final TransformationController _controller = TransformationController();
 
   @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _setInitialCamera();
+    });
+  }
+
+  void _setInitialCamera() {
+    final screen = MediaQuery.of(context).size;
+    final floor = widget.location.floors[floorIndex];
+    final map = floor.logicalSize;
+
+    final scaleX = screen.width / map.width;
+    final scaleY = screen.height / map.height;
+    final scale = max(scaleX, scaleY);
+
+    _controller.value = Matrix4.identity()
+      ..scale(scale)
+      ..translate(
+        (screen.width / scale - map.width) / -2,
+        (screen.height / scale - map.height) / -2,
+      );
+  }
+
+  @override
   Widget build(BuildContext context) {
     final floor = widget.location.floors[floorIndex];
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        backgroundColor: Colors.white.withOpacity(0.9),
+        elevation: 0,
         title: Text(widget.location.name),
         actions: [
           DropdownButton<int>(
             value: floorIndex,
             underline: const SizedBox(),
-            onChanged: (v) => setState(() => floorIndex = v!),
+            onChanged: (v) {
+              setState(() => floorIndex = v!);
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                _setInitialCamera();
+              });
+            },
             items: List.generate(
               widget.location.floors.length,
               (i) => DropdownMenuItem(
@@ -197,27 +231,25 @@ class _StorageMapPageState extends State<StorageMapPage> {
           ),
           IconButton(
             icon: const Icon(Icons.my_location),
-            onPressed: () => _controller.value = Matrix4.identity(),
+            onPressed: _setInitialCamera,
           ),
         ],
       ),
       body: InteractiveViewer(
         transformationController: _controller,
-
-        /// 🔑 EXACT ca Google Maps
         constrained: false,
         boundaryMargin: const EdgeInsets.all(double.infinity),
-
-        minScale: 0.4,
-        maxScale: 5,
-
+        minScale: 0.3,
+        maxScale: 6,
         panEnabled: true,
         scaleEnabled: true,
-
         child: GestureDetector(
-          onTapDown: (d) => _handleTap(context, d.localPosition, floor),
+          onTapDown: (d) {
+            final pos = _controller.toScene(d.localPosition);
+            _handleTap(context, pos, floor);
+          },
           child: CustomPaint(
-            size: floor.logicalSize, // canvas MAI MARE decât ecranul
+            size: floor.logicalSize,
             painter: FloorPainter(floor),
           ),
         ),
@@ -291,7 +323,7 @@ class FloorPainter extends CustomPainter {
 }
 
 /// =======================================================
-/// MOCK DATA (150+ BOXE / ETaj)
+/// MOCK DATA
 /// =======================================================
 
 List<BusinessOwner> mockOwners() {
@@ -300,20 +332,78 @@ List<BusinessOwner> mockOwners() {
       name: 'Storage Pro SRL',
       locations: [
         StorageLocation(
-          name: 'Depozit Industrial',
+          name: 'Depozit Industrial Vest',
           floors: [
-            generateFloor('Parter', seed: 1),
-            generateFloor('Etaj 1', seed: 2),
+            generateFloor('Parter', seed: 10),
+            generateFloor('Etaj 1', seed: 11),
+            generateFloor('Etaj 2', seed: 12),
           ],
+        ),
+        StorageLocation(
+          name: 'Hala Logistică Nord',
+          floors: [generateFloor('Parter', seed: 20)],
         ),
       ],
     ),
+
     BusinessOwner(
       name: 'Urban Mini Storage',
       locations: [
         StorageLocation(
           name: 'Clădire Centrală',
-          floors: [generateFloor('Etaj Unic', seed: 3)],
+          floors: [
+            generateFloor('Subsol', seed: 30),
+            generateFloor('Parter', seed: 31),
+          ],
+        ),
+        StorageLocation(
+          name: 'Turn Business Plaza',
+          floors: [
+            generateFloor('Etaj 3', seed: 32),
+            generateFloor('Etaj 4', seed: 33),
+            generateFloor('Etaj 5', seed: 34),
+          ],
+        ),
+      ],
+    ),
+
+    BusinessOwner(
+      name: 'SafeBox Solutions',
+      locations: [
+        StorageLocation(
+          name: 'Centru Rezidențial',
+          floors: [generateFloor('Parter', seed: 40)],
+        ),
+      ],
+    ),
+
+    BusinessOwner(
+      name: 'Boxify Storage',
+      locations: [
+        StorageLocation(
+          name: 'Depozit Express',
+          floors: [
+            generateFloor('Parter', seed: 50),
+            generateFloor('Mezanin', seed: 51),
+          ],
+        ),
+        StorageLocation(
+          name: 'Unitate Aeroport',
+          floors: [generateFloor('Nivel Unic', seed: 52)],
+        ),
+      ],
+    ),
+
+    BusinessOwner(
+      name: 'VaultSpace Europe',
+      locations: [
+        StorageLocation(
+          name: 'Hub Logistic Metropolitan',
+          floors: [
+            generateFloor('Zona A', seed: 60),
+            generateFloor('Zona B', seed: 61),
+            generateFloor('Zona C', seed: 62),
+          ],
         ),
       ],
     ),
@@ -329,7 +419,6 @@ FloorLayout generateFloor(String name, {required int seed}) {
 
   int index = 1;
 
-  // ~130 boxe dreptunghiulare
   for (int y = 0; y < 10; y++) {
     for (int x = 0; x < 13; x++) {
       elements.add(
@@ -343,7 +432,6 @@ FloorLayout generateFloor(String name, {required int seed}) {
     }
   }
 
-  // ~20 boxe neregulate
   for (int i = 0; i < 20; i++) {
     final bx = rand.nextDouble() * (logicalWidth - 30);
     final by = rand.nextDouble() * (logicalHeight - 30);
@@ -366,6 +454,6 @@ FloorLayout generateFloor(String name, {required int seed}) {
   return FloorLayout(
     name: name,
     logicalSize: const Size(logicalWidth, logicalHeight),
-    elements: elements, // ~150 boxe
+    elements: elements,
   );
 }
