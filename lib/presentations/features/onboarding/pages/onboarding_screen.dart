@@ -1,8 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:storeit/core/utils/generated/assets.gen.dart';
 import 'package:storeit/presentations/theme/extensions/theme_extensions.dart';
 
@@ -38,19 +36,24 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     final random = Random();
 
     // Random rotations for cards underneath the top card
-    _randomRotations.addAll(List.generate(
-      10,
-          (_) => (random.nextDouble() - 0.5) * 0.2, // -0.1 to +0.1 radians
-    ));
+    _randomRotations.addAll(
+      List.generate(
+        10,
+        (_) => (random.nextDouble() - 0.5) * 0.2, // -0.1 to +0.1 radians
+      ),
+    );
 
     // Random exit directions for top card
-    _randomExitDirections.addAll(List.generate(
-      10,
-          (_) => Offset(
-        (random.nextDouble() - 0.5) * 2, // Horizontal direction multiplier
-        -0.5 - random.nextDouble() * 0.5, // Vertical direction upwards
+    _randomExitDirections.addAll(
+      List.generate(
+        10,
+        (_) => Offset(
+          (random.nextDouble() - 0.5) * 2,
+          // Horizontal direction multiplier
+          -0.5 - random.nextDouble() * 0.5, // Vertical direction upwards
+        ),
       ),
-    ));
+    );
   }
 
   @override
@@ -63,44 +66,54 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    final colors = context.stColorPalette;
-
     _items = [
       _OnboardingItem(
-        image: StoreItAssets.icons.outline.users.userId.svg(
-          color: colors.icon.primary,
-        ),
-        title: 'Secure Storage',
-        subtitle: 'Safe, clean and convenient storage units.',
+        image: StoreItAssets.images.onboarding.onboardingWelcome.image(),
+        title: 'The right place for storage',
+        subtitle:
+            'Your simple and secure way to manage self-storage, all in one app.',
         buttonText: 'Continue',
       ),
       _OnboardingItem(
-        image: StoreItAssets.icons.outline.users.userPlusRounded.svg(
-          color: colors.icon.primary,
-        ),
-        title: 'Track Your Unit',
-        subtitle: 'Manage and monitor your storage solutions.',
+        image: StoreItAssets.images.onboarding.onboardingEasyStorage.image(),
+        title: 'Easy Storage',
+        subtitle:
+            'Store your items safely in clean, secure, and monitored units.',
         buttonText: 'Continue',
       ),
       _OnboardingItem(
-        image: StoreItAssets.icons.outline.astronomy.asteroid.svg(
-          color: colors.icon.secondary,
-        ),
-        title: 'Find Your Storage',
-        subtitle: 'Manage and maintain your storage online, anytime.',
+        image: StoreItAssets.images.onboarding.onboardingBooking.image(),
+        title: 'Easy Booking',
+        subtitle: 'Rent and book storage units in just a few taps, anytime.',
+        buttonText: 'Continue',
+      ),
+      _OnboardingItem(
+        image: StoreItAssets.images.onboarding.onboardingPayment.image(),
+        title: 'Flexible Payments',
+        subtitle: 'Pay monthly or yearly with simple, transparent pricing.',
+        buttonText: 'Continue',
+      ),
+      _OnboardingItem(
+        image: StoreItAssets.images.onboarding.onboardingLocation.image(),
+        title: 'Choose Your Location',
+        subtitle:
+            'Find and manage storage units at locations that work for you.',
         buttonText: 'Get Started',
       ),
     ];
   }
 
-  void _goToNextPage() async {
-    if (_currentPage >= _items.length - 1 || _isAnimating) return;
+  Future<void> _goToNextPage() async {
+    if (_currentPage >= _items.length - 1 || _isAnimating) {
+      return;
+    }
 
     _isAnimating = true;
 
-    _animation = Tween<double>(begin: 0, end: 1).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _animation = Tween<double>(
+      begin: 0,
+      end: 1,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
     await _controller.forward(from: 0);
 
@@ -142,48 +155,51 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               ],
             ),
 
-            SizedBox(height: layout.spaceLg),
-
             /// Stacked/Fanned Cards
             Expanded(
               child: Center(
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: List.generate(_items.length, (index) {
-                    if (index < _currentPage) return const SizedBox.shrink();
+                    if (index < _currentPage) {
+                      return const SizedBox.shrink();
+                    }
 
                     final isTop = index == _currentPage;
                     final stackIndex = index - _currentPage;
 
-                    double offsetY = stackIndex * 20.0;
-                    double offsetX = stackIndex * 10.0;
-                    double scale = 1 - stackIndex * 0.05;
-                    double rotation = isTop
+                    final offsetY = stackIndex * 20.0;
+                    final offsetX = stackIndex * 10.0;
+                    final scale = 1 - stackIndex * 0.05;
+                    final rotation = isTop
                         ? 0
                         : _randomRotations[index % _randomRotations.length];
 
                     return AnimatedBuilder(
                       animation: _controller,
                       builder: (context, child) {
-                        double animatedOffsetX = offsetX;
-                        double animatedOffsetY = offsetY;
-                        double animatedScale = scale;
-                        double animatedRotation = rotation;
+                        var animatedOffsetX = offsetX;
+                        var animatedOffsetY = offsetY;
+                        final animatedScale = scale;
+                        final animatedRotation = rotation;
 
                         if (isTop && _isAnimating) {
                           // Random exit direction multiplied by screen size
-                          final direction = _randomExitDirections[_currentPage %
-                              _randomExitDirections.length];
+                          final direction =
+                              _randomExitDirections[_currentPage %
+                                  _randomExitDirections.length];
                           animatedOffsetX =
-                              offsetX + direction.dx * screenWidth * _animation.value;
+                              offsetX +
+                              direction.dx * screenWidth * _animation.value;
                           animatedOffsetY =
-                              offsetY + direction.dy * screenHeight * _animation.value;
+                              offsetY +
+                              direction.dy * screenHeight * _animation.value;
                         }
 
                         return Transform.translate(
                           offset: Offset(animatedOffsetX, animatedOffsetY),
                           child: Transform.rotate(
-                            angle: animatedRotation,
+                            angle: animatedRotation.toDouble(),
                             child: Transform.scale(
                               scale: animatedScale,
                               child: child,
@@ -200,6 +216,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
                 ),
               ),
             ),
+            SizedBox(height: layout.spaceXl),
 
             /// Indicators
             Row(
@@ -246,7 +263,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
               ),
             ),
 
-            SizedBox(height: layout.spaceXl),
+            SizedBox(height: layout.spaceLg),
           ],
         ),
       ),
@@ -285,13 +302,13 @@ class _OnboardingCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            item.image,
-            SizedBox(height: layout.spaceXl),
             Text(
               item.title,
               textAlign: TextAlign.center,
               style: text.headlineMd.copyWith(color: colors.text.primary),
             ),
+            SizedBox(height: layout.spaceSm),
+            item.image,
             SizedBox(height: layout.spaceSm),
             Text(
               item.subtitle,
@@ -313,7 +330,7 @@ class _OnboardingItem {
     required this.buttonText,
   });
 
-  final SvgPicture image;
+  final Image image;
   final String title;
   final String subtitle;
   final String buttonText;

@@ -163,6 +163,10 @@ flutter:
     - assets/icons/Outline/VideoAudioSound/
     - assets/icons/Outline/Weather/
 
+    - assets/images/
+    - assets/images/onboarding/
+    - assets/images/shared/
+
 
   uses-material-design: true
 
