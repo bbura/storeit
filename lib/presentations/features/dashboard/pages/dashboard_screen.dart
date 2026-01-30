@@ -417,7 +417,7 @@ FloorLayout generateFloor(String name, {required int seed}) {
   int index = 1;
 
   // =======================================================
-  // COLLISION UTILITIES
+  // COLLISION
   // =======================================================
 
   bool overlaps(Path a, Path b) =>
@@ -430,154 +430,154 @@ FloorLayout generateFloor(String name, {required int seed}) {
     return elements.every((e) => !overlaps(path, e.buildPath()));
   }
 
-  bool tryAdd(
-      LayoutElement Function() builder, {
-        int attempts = 80, // 👈 more retries
-      }) {
-    for (int i = 0; i < attempts; i++) {
-      final candidate = builder();
-      if (fits(candidate)) {
-        elements.add(candidate);
-        return true;
-      }
-    }
-    return false;
-  }
+  // =======================================================
+  // FLOOR VARIANTS (THIS MAKES MAPS DIFFERENT)
+  // =======================================================
+
+  final horizontalLayout = rand.nextBool(); // aisle direction
+  final staggerRows = rand.nextBool();      // offset rows
+  final largeAtBottom = rand.nextBool();    // large unit placement
+
+  final sizePreset = rand.nextInt(3);
+  final smallSize = sizePreset == 0 ? 10.0 : 12.0;
+  final standardW = sizePreset == 1 ? 18.0 : 16.0;
+  final standardH = sizePreset == 2 ? 14.0 : 12.0;
 
   // =======================================================
   // ZONES
   // =======================================================
 
-  final centerZone = Rect.fromLTWH(
-    logicalSize.width / 2 - 28,
+  final serviceZone = Rect.fromLTWH(
+    logicalSize.width / 2 - 24 + rand.nextDouble() * 10 - 5,
     padding,
-    56,
-    logicalSize.height - padding * 2,
+    42 + rand.nextDouble() * 12,
+    24 + rand.nextDouble() * 10,
   );
 
-  final leftZone = Rect.fromLTWH(
+  final mainZone = Rect.fromLTWH(
     padding,
-    padding,
-    centerZone.left - padding * 2,
-    logicalSize.height - padding * 2,
-  );
-
-  final rightZone = Rect.fromLTWH(
-    centerZone.right + padding,
-    padding,
-    logicalSize.width - centerZone.right - padding * 2,
-    logicalSize.height - padding * 2,
-  );
-
-  final bottomZone = Rect.fromLTWH(
-    padding,
-    logicalSize.height - 32,
+    serviceZone.bottom + 6,
     logicalSize.width - padding * 2,
-    24,
-  );
-
-  final fullZone = Rect.fromLTWH(
-    padding,
-    padding,
-    logicalSize.width - padding * 2,
-    logicalSize.height - padding * 2,
+    logicalSize.height - serviceZone.height - padding * 3,
   );
 
   // =======================================================
-  // 1️⃣ POLYGONS (CENTER – MORE)
+  // 1️⃣ SERVICE POLYGONS (1–2 ONLY)
   // =======================================================
 
-  for (int i = 0; i < 10; i++) {
-    tryAdd(() {
-      final cx = centerZone.left + rand.nextDouble() * centerZone.width;
-      final cy = centerZone.top + rand.nextDouble() * centerZone.height;
-      final size = 10 + rand.nextInt(14);
+  final polyCount = 1 + rand.nextInt(2);
 
-      return PolygonBox(
-        'P$index',
-        UnitStatus.values[rand.nextInt(3)],
+  for (int i = 0; i < polyCount; i++) {
+    final x = serviceZone.left + rand.nextDouble() * 6;
+    final y = serviceZone.top + rand.nextDouble() * 6;
+
+    elements.add(
+      PolygonBox(
+        'T$index',
+        UnitStatus.reserved,
         points: [
-          Offset(cx, cy),
-          Offset(cx + size, cy + rand.nextDouble() * size),
-          Offset(cx + size * 0.6, cy + size),
-          Offset(cx - rand.nextDouble() * size * 0.4, cy + size * 0.6),
+          Offset(x, y),
+          Offset(x + serviceZone.width - 6, y + rand.nextDouble() * 6),
+          Offset(x + serviceZone.width - 10,
+              y + serviceZone.height - rand.nextDouble() * 6),
+          Offset(x + rand.nextDouble() * 8,
+              y + serviceZone.height - 4),
         ],
-      );
-    });
-
+      ),
+    );
     index++;
   }
 
   // =======================================================
-  // 2️⃣ RECTANGLES & SQUARES (SIDES – MANY MORE)
+  // 2️⃣ STORAGE BOX GRID (ORGANIZED BUT VARIED)
   // =======================================================
 
-  for (int i = 0; i < 48; i++) {
-    final zone = rand.nextBool() ? leftZone : rightZone;
+  void generateGrid(Rect zone, double w, double h, String prefix) {
+    int row = 0;
 
-    tryAdd(() {
-      final isSquare = rand.nextBool();
-      final w = isSquare ? 10 + rand.nextInt(10) : 14 + rand.nextInt(20);
-      final h = isSquare ? w : 10 + rand.nextInt(16);
+    for (double y = zone.top;
+    y + h <= zone.bottom;
+    y += h + 4) {
+      final rowOffset =
+      staggerRows && row.isOdd ? rand.nextDouble() * 6 : 0;
 
-      final x = zone.left + rand.nextDouble() * (zone.width - w);
-      final y = zone.top + rand.nextDouble() * (zone.height - h);
+      for (double x = zone.left + rowOffset;
+      x + w <= zone.right;
+      x += w + 4) {
+        final box = RectBox(
+          '$prefix$index',
+          UnitStatus.values[rand.nextInt(3)],
+          rect: Rect.fromLTWH(
+            horizontalLayout ? x : y,
+            horizontalLayout ? y : x,
+            w,
+            h,
+          ),
+        );
 
-      return RectBox(
-        'B$index',
-        UnitStatus.values[rand.nextInt(3)],
-        rect: Rect.fromLTWH(x, y, w.toDouble(), h.toDouble()),
-      );
-    });
-
-    index++;
+        if (fits(box)) {
+          elements.add(box);
+          index++;
+        }
+      }
+      row++;
+    }
   }
 
+  // Small units
+  generateGrid(mainZone, smallSize, smallSize, 'S');
+
+  // Standard units (dominant)
+  generateGrid(mainZone, standardW, standardH, 'B');
+
   // =======================================================
-  // 3️⃣ LARGE UNITS (BOTTOM – MORE)
+  // 3️⃣ LARGE UNITS (BOTTOM OR SIDE)
   // =======================================================
 
-  for (int i = 0; i < 8; i++) {
-    tryAdd(() {
-      final w = 28 + rand.nextInt(26);
+  if (largeAtBottom) {
+    final bottomZone = Rect.fromLTWH(
+      padding,
+      logicalSize.height - 30,
+      logicalSize.width - padding * 2,
+      22,
+    );
 
-      return RectBox(
+    for (double x = bottomZone.left;
+    x + 36 <= bottomZone.right;
+    x += 36 + 6) {
+      final box = RectBox(
         'L$index',
         UnitStatus.values[rand.nextInt(3)],
-        rect: Rect.fromLTWH(
-          bottomZone.left +
-              rand.nextDouble() * (bottomZone.width - w),
-          bottomZone.top,
-          w.toDouble(),
-          bottomZone.height,
-        ),
+        rect: Rect.fromLTWH(x, bottomZone.top, 36, bottomZone.height),
       );
-    });
 
-    index++;
-  }
+      if (fits(box)) {
+        elements.add(box);
+        index++;
+      }
+    }
+  } else {
+    final sideZone = Rect.fromLTWH(
+      logicalSize.width - 40,
+      mainZone.top,
+      32,
+      mainZone.height,
+    );
 
-  // =======================================================
-  // 4️⃣ EXTRA FILL PASS (SMALL UNITS ANYWHERE)
-  // =======================================================
-
-  for (int i = 0; i < 30; i++) {
-    tryAdd(() {
-      final isSquare = rand.nextInt(3) == 0;
-      final w = isSquare ? 8 + rand.nextInt(6) : 10 + rand.nextInt(10);
-      final h = isSquare ? w : 8 + rand.nextInt(10);
-
-      final x = fullZone.left + rand.nextDouble() * (fullZone.width - w);
-      final y = fullZone.top + rand.nextDouble() * (fullZone.height - h);
-
-      return RectBox(
-        'S$index',
+    for (double y = sideZone.top;
+    y + 30 <= sideZone.bottom;
+    y += 30 + 6) {
+      final box = RectBox(
+        'L$index',
         UnitStatus.values[rand.nextInt(3)],
-        rect: Rect.fromLTWH(x, y, w.toDouble(), h.toDouble()),
+        rect: Rect.fromLTWH(sideZone.left, y, sideZone.width, 30),
       );
-    });
 
-    index++;
+      if (fits(box)) {
+        elements.add(box);
+        index++;
+      }
+    }
   }
 
   return FloorLayout(
