@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:storeit/presentations/features/dashboard/pages/3d_map.dart';
 import 'package:storeit/presentations/features/dashboard/pages/create_floor_screen.dart';
 
 /// =======================================================
@@ -114,12 +115,22 @@ class DashboardScreen extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
-            tooltip: 'Add Floor Map',
             onPressed: () async {
               await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (_) => const CreateFloorScreen(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.map),
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const ChooseUnitScreen(),
                 ),
               );
             },
