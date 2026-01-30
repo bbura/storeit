@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:storeit/core/utils/generated/assets.gen.dart';
+import 'package:storeit/presentations/features/dashboard/pages/dashboard_screen.dart';
 import 'package:storeit/presentations/theme/extensions/theme_extensions.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -104,7 +105,13 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   }
 
   Future<void> _goToNextPage() async {
-    if (_currentPage >= _items.length - 1 || _isAnimating) {
+    if (_currentPage >= _items.length - 1) {
+      await Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => const DashboardScreen()),
+      );
+      return;
+    }
+    if (_isAnimating) {
       return;
     }
 
