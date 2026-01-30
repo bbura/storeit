@@ -71,11 +71,15 @@ class FloorLayout {
     required this.name,
     required this.logicalSize,
     required this.elements,
+    required this.boundary,
   });
 
   final String name;
   final Size logicalSize;
   final List<LayoutElement> elements;
+
+  /// Irregular building outline
+  final Path boundary;
 }
 
 class StorageLocation {
@@ -301,7 +305,15 @@ class FloorPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawRect(Offset.zero & size, Paint()..color = Colors.grey.shade200);
+    // Clip to building shape
+    canvas.save();
+    canvas.clipPath(floor.boundary);
+
+    // Floor background
+    canvas.drawPath(
+      floor.boundary,
+      Paint()..color = Colors.grey.shade200,
+    );
 
     for (final e in floor.elements) {
       final fill = Paint()..color = e.status.color;
@@ -313,6 +325,17 @@ class FloorPainter extends CustomPainter {
       canvas.drawPath(path, fill);
       canvas.drawPath(path, border);
     }
+
+    canvas.restore();
+
+    // Building outline
+    canvas.drawPath(
+      floor.boundary,
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 2
+        ..color = Colors.black38,
+    );
   }
 
   @override
@@ -410,14 +433,30 @@ List<BusinessOwner> mockOwners() {
 FloorLayout generateFloor(String name, {required int seed}) {
   final rand = Random(seed);
   final elements = <LayoutElement>[];
+  int index = 1;
 
   const logicalSize = Size(240, 180);
   const padding = 8.0;
 
-  int index = 1;
+  // =======================================================
+  // BUILDING POLYGON (EVERY FLOOR DIFFERENT)
+  // =======================================================
+
+  final a = 20 + rand.nextInt(25);
+  final b = 14 + rand.nextInt(25);
+  final c = 12 + rand.nextInt(20);
+
+  final boundary = Path()
+    ..moveTo(padding, padding)
+    ..lineTo(logicalSize.width - a, padding)
+    ..lineTo(logicalSize.width - padding, b.toDouble())
+    ..lineTo(logicalSize.width - padding, logicalSize.height - c)
+    ..lineTo(c.toDouble(), logicalSize.height - padding)
+    ..lineTo(padding, logicalSize.height - a)
+    ..close();
 
   // =======================================================
-  // COLLISION
+  // COLLISION + BOUNDARY SAFETY
   // =======================================================
 
   bool overlaps(Path a, Path b) =>
@@ -425,94 +464,87 @@ FloorLayout generateFloor(String name, {required int seed}) {
           .computeMetrics()
           .isNotEmpty;
 
+  bool insideBoundary(Path p) =>
+      Path.combine(PathOperation.difference, p, boundary)
+          .computeMetrics()
+          .isEmpty;
+
   bool fits(LayoutElement candidate) {
     final path = candidate.buildPath();
+    if (!insideBoundary(path)) return false;
     return elements.every((e) => !overlaps(path, e.buildPath()));
   }
 
   // =======================================================
-  // FLOOR VARIANTS (THIS MAKES MAPS DIFFERENT)
+  // VARIATION FLAGS (MAKE FLOORS DIFFERENT)
   // =======================================================
 
-  final horizontalLayout = rand.nextBool(); // aisle direction
-  final staggerRows = rand.nextBool();      // offset rows
-  final largeAtBottom = rand.nextBool();    // large unit placement
+  final staggerRows = rand.nextBool();
+  final largeAtBottom = rand.nextBool();
 
   final sizePreset = rand.nextInt(3);
   final smallSize = sizePreset == 0 ? 10.0 : 12.0;
-  final standardW = sizePreset == 1 ? 18.0 : 16.0;
-  final standardH = sizePreset == 2 ? 14.0 : 12.0;
+  final boxW = sizePreset == 1 ? 18.0 : 16.0;
+  final boxH = sizePreset == 2 ? 14.0 : 12.0;
 
   // =======================================================
-  // ZONES
+  // SERVICE POLYGON (1–2 ONLY)
   // =======================================================
 
-  final serviceZone = Rect.fromLTWH(
-    logicalSize.width / 2 - 24 + rand.nextDouble() * 10 - 5,
-    padding,
-    42 + rand.nextDouble() * 12,
-    24 + rand.nextDouble() * 10,
+  final serviceRect = Rect.fromLTWH(
+    logicalSize.width / 2 - 30 + rand.nextDouble() * 10,
+    padding + rand.nextDouble() * 8,
+    50,
+    26,
   );
-
-  final mainZone = Rect.fromLTWH(
-    padding,
-    serviceZone.bottom + 6,
-    logicalSize.width - padding * 2,
-    logicalSize.height - serviceZone.height - padding * 3,
-  );
-
-  // =======================================================
-  // 1️⃣ SERVICE POLYGONS (1–2 ONLY)
-  // =======================================================
 
   final polyCount = 1 + rand.nextInt(2);
 
   for (int i = 0; i < polyCount; i++) {
-    final x = serviceZone.left + rand.nextDouble() * 6;
-    final y = serviceZone.top + rand.nextDouble() * 6;
-
-    elements.add(
-      PolygonBox(
-        'T$index',
-        UnitStatus.reserved,
-        points: [
-          Offset(x, y),
-          Offset(x + serviceZone.width - 6, y + rand.nextDouble() * 6),
-          Offset(x + serviceZone.width - 10,
-              y + serviceZone.height - rand.nextDouble() * 6),
-          Offset(x + rand.nextDouble() * 8,
-              y + serviceZone.height - 4),
-        ],
-      ),
+    final poly = PolygonBox(
+      'T$index',
+      UnitStatus.reserved,
+      points: [
+        serviceRect.topLeft,
+        serviceRect.topRight.translate(-6, 4),
+        serviceRect.bottomRight.translate(-10, -4),
+        serviceRect.bottomLeft.translate(6, -2),
+      ],
     );
-    index++;
+
+    if (fits(poly)) {
+      elements.add(poly);
+      index++;
+    }
   }
 
   // =======================================================
-  // 2️⃣ STORAGE BOX GRID (ORGANIZED BUT VARIED)
+  // STORAGE AREA
   // =======================================================
 
-  void generateGrid(Rect zone, double w, double h, String prefix) {
+  final storageZone = Rect.fromLTWH(
+    padding,
+    serviceRect.bottom + 8,
+    logicalSize.width - padding * 2,
+    logicalSize.height - serviceRect.height - padding * 3,
+  );
+
+  void generateGrid(double w, double h, String prefix) {
     int row = 0;
 
-    for (double y = zone.top;
-    y + h <= zone.bottom;
+    for (double y = storageZone.top;
+    y + h <= storageZone.bottom;
     y += h + 4) {
-      final rowOffset =
+      final offset =
       staggerRows && row.isOdd ? rand.nextDouble() * 6 : 0;
 
-      for (double x = zone.left + rowOffset;
-      x + w <= zone.right;
+      for (double x = storageZone.left + offset;
+      x + w <= storageZone.right;
       x += w + 4) {
         final box = RectBox(
           '$prefix$index',
           UnitStatus.values[rand.nextInt(3)],
-          rect: Rect.fromLTWH(
-            horizontalLayout ? x : y,
-            horizontalLayout ? y : x,
-            w,
-            h,
-          ),
+          rect: Rect.fromLTWH(x, y, w, h),
         );
 
         if (fits(box)) {
@@ -525,13 +557,13 @@ FloorLayout generateFloor(String name, {required int seed}) {
   }
 
   // Small units
-  generateGrid(mainZone, smallSize, smallSize, 'S');
+  generateGrid(smallSize, smallSize, 'S');
 
   // Standard units (dominant)
-  generateGrid(mainZone, standardW, standardH, 'B');
+  generateGrid(boxW, boxH, 'B');
 
   // =======================================================
-  // 3️⃣ LARGE UNITS (BOTTOM OR SIDE)
+  // LARGE UNITS
   // =======================================================
 
   if (largeAtBottom) {
@@ -556,33 +588,12 @@ FloorLayout generateFloor(String name, {required int seed}) {
         index++;
       }
     }
-  } else {
-    final sideZone = Rect.fromLTWH(
-      logicalSize.width - 40,
-      mainZone.top,
-      32,
-      mainZone.height,
-    );
-
-    for (double y = sideZone.top;
-    y + 30 <= sideZone.bottom;
-    y += 30 + 6) {
-      final box = RectBox(
-        'L$index',
-        UnitStatus.values[rand.nextInt(3)],
-        rect: Rect.fromLTWH(sideZone.left, y, sideZone.width, 30),
-      );
-
-      if (fits(box)) {
-        elements.add(box);
-        index++;
-      }
-    }
   }
 
   return FloorLayout(
     name: name,
     logicalSize: logicalSize,
     elements: elements,
+    boundary: boundary,
   );
 }
