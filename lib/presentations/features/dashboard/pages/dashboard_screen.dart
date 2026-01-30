@@ -178,10 +178,7 @@ class _StorageMapPageState extends State<StorageMapPage> {
   @override
   void initState() {
     super.initState();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _setInitialCamera();
-    });
+    WidgetsBinding.instance.addPostFrameCallback((_) => _setInitialCamera());
   }
 
   void _setInitialCamera() {
@@ -189,15 +186,15 @@ class _StorageMapPageState extends State<StorageMapPage> {
     final floor = widget.location.floors[floorIndex];
     final map = floor.logicalSize;
 
-    final scaleX = screen.width / map.width;
-    final scaleY = screen.height / map.height;
-    final scale = max(scaleX, scaleY);
+    // Zoom to fully cover screen width
+    final scale = screen.width / map.width;
 
     _controller.value = Matrix4.identity()
       ..scale(scale)
       ..translate(
-        (screen.width / scale - map.width) / -2,
-        (screen.height / scale - map.height) / -2,
+        0.0, // left aligned
+        (screen.height / scale - map.height) / 2,
+        0.0, // 👈 REQUIRED
       );
   }
 
@@ -217,13 +214,12 @@ class _StorageMapPageState extends State<StorageMapPage> {
             underline: const SizedBox(),
             onChanged: (v) {
               setState(() => floorIndex = v!);
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                _setInitialCamera();
-              });
+              WidgetsBinding.instance
+                  .addPostFrameCallback((_) => _setInitialCamera());
             },
             items: List.generate(
               widget.location.floors.length,
-              (i) => DropdownMenuItem(
+                  (i) => DropdownMenuItem(
                 value: i,
                 child: Text(widget.location.floors[i].name),
               ),
@@ -241,12 +237,13 @@ class _StorageMapPageState extends State<StorageMapPage> {
         boundaryMargin: const EdgeInsets.all(double.infinity),
         minScale: 0.3,
         maxScale: 6,
-        panEnabled: true,
-        scaleEnabled: true,
         child: GestureDetector(
-          onTapDown: (d) {
-            final pos = _controller.toScene(d.localPosition);
-            _handleTap(context, pos, floor);
+          behavior: HitTestBehavior.translucent,
+          onTapDown: (details) {
+            final box = context.findRenderObject() as RenderBox;
+            final local = box.globalToLocal(details.globalPosition);
+            final scene = _controller.toScene(local);
+            _handleTap(context, scene, floor);
           },
           child: CustomPaint(
             size: floor.logicalSize,
