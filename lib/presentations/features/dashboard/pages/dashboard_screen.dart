@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:storeit/presentations/features/dashboard/pages/create_floor_screen.dart';
 
 /// =======================================================
 /// MODELS
@@ -108,7 +109,23 @@ class DashboardScreen extends StatelessWidget {
     final owners = mockOwners();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Self Storage Demo')),
+      appBar: AppBar(
+        title: const Text('Self Storage Demo'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            tooltip: 'Add Floor Map',
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const CreateFloorScreen(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: ListView.builder(
         itemCount: owners.length,
         itemBuilder: (_, i) {
